@@ -18,7 +18,10 @@ Things I need to do.
 - [ ] dismissables
 - [ ] action types (our beloved dispatcher)
 - [ ] science/analytics stuff (?)
-- [ ] some more enums like Endpoints, Routes, Flags and what not (TODO: list all useful enums here)
+- [ ] enums
+  - [ ] Endpoints
+  - [ ] Routes
+  - [ ] okay i got tired of listing enums from the android source
 
 ### Developer Portal
 
