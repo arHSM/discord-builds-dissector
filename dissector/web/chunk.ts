@@ -431,13 +431,13 @@ export function processChunk(ast: Program): Chunk {
                 default:
                     throw new Error(
                         `Unsupported property \`${calleeObjectLeft.property.name}\`. ` +
-                            "Expected one of (webpackJsonp, webpackChunkdiscord_app)"
+                            "Expected one of (webpackJsonp, webpackChunkdiscord_app)."
                     );
             }
         default:
             throw new Error(
                 `Unsupported chunk expression type \`${callee.type}\`. ` +
-                    "Expected one of (Identifier, MemberExpression)"
+                    "Expected one of (Identifier, MemberExpression)."
             );
     }
 }

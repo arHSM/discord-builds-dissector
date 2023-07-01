@@ -72,8 +72,11 @@ To find all chunks form the chunk loader (replace all newlines before running th
 - JS: `(\{(?:[\de]+?:"[0-9a-fA-F]{20}",?)+\})\[\w+?\]\+".js"`
 - CSS: `(\{(?:[\de]+?:"[0-9a-fA-F]{20}",?)+\})\[\w+?\]\+".css"`
   - They started using css chunks from 2020
+  - CSS chunks require you to prefix them with their module id, so a chunk `abc` with id `1` will be `1.abc.css`
 
 You could use ast parsing and stuff for getting chunks from chunk loader, but meh.
+Ehm apprently css chunks can have the same file again and again at least
+[`./files/chunkLoaders/2020.js.txt`](./files/chunkLoaders/2020.js.txt) does.
 
 ### Developer Portal
 
