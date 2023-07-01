@@ -13,9 +13,9 @@ documented them in the individual files, these documentations include a YAML
 representation of the AST and major changes from 2016 to current time.\
 *(why document and implement support for old builds? why not.)*
 
-I have noted down some things in my [notes](./notes.md) you can read them if you want to.\
-There are some files I downloaded for testing under [./files](./files), dont ask
-why they are all prefixed `.txt`, I don't want vscode to OOM.
+I have noted down some things in my [`notes`](./notes.md) you can read them if you want to.\
+There are some files I downloaded for testing under [`./files`](./files), dont ask
+why they are all suffixed `.txt`, I don't want vscode to OOM.
 
 As there's no way to view older developer portal builds and there also isn't a
 project archiving them I'll be only documenting recent things for them unlike the
