@@ -4,7 +4,7 @@ Random notes I take down during my obfuscated javascript adventures :)
 
 ## Checklist
 
-This I need to do.
+Things I need to do.
 
 ### Web
 
@@ -42,7 +42,7 @@ New deploy system started somewhere around late 2018
 
 ~~Global Environment Variables: `window\.GLOBAL_ENV ?= ?(\{.+?\});`~~
 
-~~Surface level chunks:
+~~Surface level chunks~~:
 - ~~JS: `src="/assets/([0-9a-fA-f]{20}).js"`~~
 - ~~CSS: `href="/assets/(\d+?\.?[0-9a-fA-f]{20}).css"`~~
 
