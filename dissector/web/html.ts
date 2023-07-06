@@ -17,10 +17,10 @@ import { load } from "cheerio";
  * The surface level chunks are the important ones as they'll allow you to perform
  * other things like getting assets or extracting strings.
  */
-export function processHtml(html: string) {
+export function processHtml(html: string, addSentryTags: boolean, buildId: string) {
     const $ = load(html);
 
-    const globalEnv = {};
+    const globalEnv: Record<string, any> = {};
     const stylesheet = $('link[rel="stylesheet"]').attr("href");
     const surfaceChunksArray: string[] = [];
 
@@ -49,6 +49,11 @@ export function processHtml(html: string) {
     });
 
     assert(
+        Object.keys(globalEnv).length !== 0,
+        "HTML file must have GLOBAL_ENV declaration present."
+    )
+
+    assert(
         surfaceChunksArray.length >= 2,
         "There must be atleast 2 JS chunks in the HTML source."
     );
@@ -64,6 +69,19 @@ export function processHtml(html: string) {
         vendor: surfaceChunksArray.length === 4 ? surfaceChunksArray[2] : null,
         main: surfaceChunksArray[surfaceChunksArray.length - 1],
     };
+
+    // If you retrive the HTML file from specifiec sources they do not serve the
+    // SENTRY_TAGS with populated values.
+    // I was told, "fwiw it'd be safe to manually insert the sentry tags".
+    if (addSentryTags) {
+        if (typeof globalEnv.SENTRY_TAGS === "object") {
+            globalEnv.SENTRY_TAGS.buildId = buildId;
+            // I was also told told
+            // "it's always the same
+            // buildtype always normal"
+            globalEnv.SENTRY_TAGS.buildType = "normal";
+        }
+    }
 
     return {
         globalEnv,
