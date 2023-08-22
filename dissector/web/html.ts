@@ -17,7 +17,12 @@ import { load } from "cheerio";
  * The surface level chunks are the important ones as they'll allow you to perform
  * other things like getting assets or extracting strings.
  */
-export function processHtml(html: string, addSentryTags: boolean, buildId: string) {
+export function processHtml(
+    html: string,
+    evalGlobalEnv: boolean,
+    addSentryTags: boolean,
+    buildId?: string
+) {
     const $ = load(html);
 
     const globalEnv: Record<string, any> = {};
@@ -27,20 +32,24 @@ export function processHtml(html: string, addSentryTags: boolean, buildId: strin
     $("script").each(function () {
         const text = $(this).text().trim();
         if (text.startsWith("window.GLOBAL_ENV")) {
-            // MMYES good 'ol eval
-            Object.assign(
-                globalEnv,
-                eval(
-                    "(" +
-                        text
-                            .replaceAll(
-                                /(window\.GLOBAL_ENV\s*=\s*|,(?=\n?\s+\})|;)/g,
-                                ""
-                            )
-                            .replace("Date.now()", '"Date.now()"') +
-                        ")"
-                )
-            );
+            if (evalGlobalEnv) {
+                // MMYES good 'ol eval
+                Object.assign(
+                    globalEnv,
+                    eval(
+                        "(" +
+                            text
+                                .replaceAll(
+                                    /(window\.GLOBAL_ENV\s*=\s*|;)/g,
+                                    ""
+                                )
+                                .replace("Date.now()", '"Date.now()"') +
+                            ")"
+                    )
+                );
+            } else {
+                globalEnv._raw = text;
+            }
         }
     });
 
@@ -51,7 +60,7 @@ export function processHtml(html: string, addSentryTags: boolean, buildId: strin
     assert(
         Object.keys(globalEnv).length !== 0,
         "HTML file must have GLOBAL_ENV declaration present."
-    )
+    );
 
     assert(
         surfaceChunksArray.length >= 2,
@@ -73,7 +82,7 @@ export function processHtml(html: string, addSentryTags: boolean, buildId: strin
     // If you retrive the HTML file from specifiec sources they do not serve the
     // SENTRY_TAGS with populated values.
     // I was told, "fwiw it'd be safe to manually insert the sentry tags".
-    if (addSentryTags) {
+    if (addSentryTags && typeof buildId !== "undefined") {
         if (typeof globalEnv.SENTRY_TAGS === "object") {
             globalEnv.SENTRY_TAGS.buildId = buildId;
             // I was also told told
@@ -84,7 +93,7 @@ export function processHtml(html: string, addSentryTags: boolean, buildId: strin
     }
 
     return {
-        globalEnv,
+        globalEnv: evalGlobalEnv ? globalEnv : (globalEnv._raw as string),
         stylesheet,
         surfaceChunks,
     };

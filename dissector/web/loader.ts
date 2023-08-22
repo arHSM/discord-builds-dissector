@@ -7,10 +7,10 @@ const chunksJsonFix = /([\de]+):/g;
 
 function matchToJSON(match: string): Record<string, string> {
     return JSON.parse(
-        // Have to eval here because of minifier using the scientific e notation
+        // Have to parseFloat here because of minifier using the scientific e notation
         match
             .replace(",}", "}")
-            .replaceAll(chunksJsonFix, (_, id) => '"' + eval(id) + '":')
+            .replaceAll(chunksJsonFix, (_, id) => '"' + parseFloat(id) + '":')
     );
 }
 

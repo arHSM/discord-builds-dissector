@@ -1,0 +1,1 @@
+const scopeSymbol = Symbol("scope");

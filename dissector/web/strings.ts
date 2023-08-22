@@ -8,7 +8,19 @@ import {
     ObjectExpression,
     Property,
 } from "../../types/es2022";
-import { checkElements, isIdentifier, isLiteral } from "../util";
+import {
+    checkElements,
+    isAssignmentExpression,
+    isBlockStatement,
+    isCallExpression,
+    isExpressionStatement,
+    isIdentifier,
+    isLiteral,
+    isMemberExpression,
+    isObjectExpression,
+    isProperty,
+    isSequenceExpression,
+} from "../utils";
 
 /**
  * If the given module is a "strings module" this function returns the strings
@@ -183,23 +195,23 @@ export function getStrings(
     if (
         module.params.length >= 2 &&
         isIdentifier(module.params[1]) &&
-        module.body.type === "BlockStatement" &&
+        isBlockStatement(module.body) &&
         module.body.body.length >= 2 &&
-        module.body.body[1].type === "ExpressionStatement" &&
-        module.body.body[1].expression.type === "SequenceExpression" &&
+        isExpressionStatement(module.body.body[1]) &&
+        isSequenceExpression(module.body.body[1].expression) &&
         module.body.body[1].expression.expressions.length >= 2 &&
-        module.body.body[1].expression.expressions[1].type === "AssignmentExpression" &&
-        module.body.body[1].expression.expressions[1].left.type === "MemberExpression" &&
+        isAssignmentExpression(module.body.body[1].expression.expressions[1]) &&
+        isMemberExpression(module.body.body[1].expression.expressions[1].left) &&
         isIdentifier(module.body.body[1].expression.expressions[1].left.object, module.params[1].name) &&
         (
             isLiteral(module.body.body[1].expression.expressions[1].left.property, "default") ||
             isIdentifier(module.body.body[1].expression.expressions[1].left.property, "default")
         ) &&
-        module.body.body[1].expression.expressions[1].right.type === "ObjectExpression" &&
+        isObjectExpression(module.body.body[1].expression.expressions[1].right) &&
         checkElements(
             module.body.body[1].expression.expressions[1].right.properties,
             (prop): prop is { key: Identifier | Literal; value: Literal } & Property =>
-                prop.type === "Property" &&
+                isProperty(prop) &&
                 (isIdentifier(prop.key) || isLiteral(prop.key)) &&
                 isLiteral(prop.value)
         ) &&
@@ -207,13 +219,13 @@ export function getStrings(
             .some(
                 prop => 
                     ["DISCORD_DESC_SHORT", "DISCORD_NAME", "NOTIFICATION_BODY_ATTACHMENT"]
-                        .includes(prop.key.type === "Identifier" ? prop.key.name : prop.key.value as string)
+                        .includes(isIdentifier(prop.key) ? prop.key.name : prop.key.value as string)
             )
     ) {
         return Object.fromEntries(
             module.body.body[1].expression.expressions[1].right.properties
                 .map(
-                    prop => [prop.key.type === "Identifier" ? prop.key.name : prop.key.value, prop.value.value as string]
+                    prop => [isIdentifier(prop.key) ? prop.key.name : prop.key.value, prop.value.value as string]
                 )
         )
     }
@@ -224,24 +236,24 @@ export function getStrings(
     if (
         module.params.length >= 1 &&
         isIdentifier(module.params[0]) &&
-        module.body.type === "BlockStatement" &&
+        isBlockStatement(module.body) &&
         module.body.body.length >= 1 &&
         (stmt = module.body.body[isLiteral(module.body.body[0], "use strict") ? 1 : 0]) &&
-        stmt.type === "ExpressionStatement" &&
-        stmt.expression.type === "AssignmentExpression" &&
-        stmt.expression.left.type === "MemberExpression" &&
+        isExpressionStatement(stmt) &&
+        isAssignmentExpression(stmt.expression) &&
+        isMemberExpression(stmt.expression.left) &&
         isIdentifier(stmt.expression.left.object, module.params[0].name) &&
         isIdentifier(stmt.expression.left.property, "exports") &&
-        stmt.expression.right.type === "CallExpression" &&
-        stmt.expression.right.callee.type === "MemberExpression" &&
+        isCallExpression(stmt.expression.right) &&
+        isMemberExpression(stmt.expression.right.callee) &&
         isIdentifier(stmt.expression.right.callee.object, "Object") &&
         isIdentifier(stmt.expression.right.callee.property, "freeze") &&
         stmt.expression.right.arguments.length === 1 &&
-        stmt.expression.right.arguments[0].type === "ObjectExpression" &&
+        isObjectExpression(stmt.expression.right.arguments[0]) &&
         checkElements(
             stmt.expression.right.arguments[0].properties,
             (prop): prop is { key: Identifier | Literal; value: Literal } & Property =>
-                prop.type === "Property" &&
+                isProperty(prop) &&
                 (isIdentifier(prop.key) || isLiteral(prop.key)) &&
                 isLiteral(prop.value)
         ) &&
@@ -249,13 +261,13 @@ export function getStrings(
             .some(
                 prop => 
                     ["DISCORD_DESC_SHORT", "DISCORD_NAME", "NOTIFICATION_BODY_ATTACHMENT"]
-                        .includes(prop.key.type === "Identifier" ? prop.key.name : prop.key.value as string)
+                        .includes(isIdentifier(prop.key) ? prop.key.name : prop.key.value as string)
             )
     ) {
         return Object.fromEntries(
             stmt.expression.right.arguments[0].properties
                 .map(
-                    prop => [prop.key.type === "Identifier" ? prop.key.name : prop.key.value, prop.value.value as string]
+                    prop => [isIdentifier(prop.key) ? prop.key.name : prop.key.value, prop.value.value as string]
                 )
         )
     }
@@ -266,21 +278,21 @@ export function getStrings(
     if (
         module.params.length >= 1 &&
         isIdentifier(module.params[0]) &&
-        module.body.type === "BlockStatement" &&
+        isBlockStatement(module.body) &&
         module.body.body.length >= 3 &&
-        module.body.body[2].type === "ExpressionStatement" &&
-        module.body.body[2].expression.type === "AssignmentExpression" &&
+        isExpressionStatement(module.body.body[2]) &&
+        isAssignmentExpression(module.body.body[2].expression) &&
         module.body.body[2].expression.operator === "=" &&
-        module.body.body[2].expression.left.type === "MemberExpression" &&
+        isMemberExpression(module.body.body[2].expression.left) &&
         isIdentifier(module.body.body[2].expression.left.object, module.params[0].name) &&
         isIdentifier(module.body.body[2].expression.left.property, "exports") &&
-        module.body.body[2].expression.right.type === "CallExpression" &&
-        module.body.body[2].expression.right.callee.type === "MemberExpression" &&
+        isCallExpression(module.body.body[2].expression.right) &&
+        isMemberExpression(module.body.body[2].expression.right.callee) &&
         isIdentifier(module.body.body[2].expression.right.callee.object, "Object") &&
         isIdentifier(module.body.body[2].expression.right.callee.property, "freeze") &&
         module.body.body[2].expression.right.arguments.length === 1 &&
-        module.body.body[2].expression.right.arguments[0].type === "SequenceExpression" &&
-        module.body.body[2].expression.right.arguments[0].expressions.at(-1)?.type === "Identifier" &&
+        isSequenceExpression(module.body.body[2].expression.right.arguments[0]) &&
+        isIdentifier(module.body.body[2].expression.right.arguments[0].expressions.at(-1)) &&
         (seq = module.body.body[2].expression.right.arguments[0].expressions.slice(0, -1)) &&
         checkElements(
             seq,
@@ -303,12 +315,12 @@ export function getStrings(
                     Literal
                 ];
             } & CallExpression =>
-                expr.type === "CallExpression" &&
+                isCallExpression(expr) &&
                 expr.arguments.length === 3 &&
                 (
                     (
-                        expr.arguments[0].type === "AssignmentExpression" &&
-                        expr.arguments[0].right.type === "ObjectExpression" &&
+                        isAssignmentExpression(expr.arguments[0]) &&
+                        isObjectExpression(expr.arguments[0].right) &&
                         checkElements(
                             expr.arguments[0].right.properties,
                             (
@@ -316,19 +328,19 @@ export function getStrings(
                             ): prop is {
                                 key: Identifier;
                                 value: Literal;
-                            } & Property => prop.type === "Property"
+                            } & Property => isProperty(prop)
                         )
                     ) ||
-                    expr.arguments[0].type === "Identifier"
+                    isIdentifier(expr.arguments[0])
                 ) &&
-                expr.arguments[1].type === "Literal" &&
-                expr.arguments[2].type === "Literal"
+                isLiteral(expr.arguments[1]) &&
+                isLiteral(expr.arguments[2])
         )
     ) {
         const result: Record<string, string> = {};
 
         for (const { arguments: args } of seq) {
-            if (args[0].type === "AssignmentExpression") {
+            if (isAssignmentExpression(args[0])) {
                 for (const { key, value } of args[0].right.properties) {
                     result[key.name] = value.value as string;
                 }

@@ -29,11 +29,6 @@ Things I need to do.
 - [ ] experiment definitions
 - [ ] and enums (TODO: list all useful enums here)
 
-### Android/iOS
-
-Just port the decompiling and js pseudo code subset from
-https://github.com/P1sec/hermes-dec
-
 ## Useful notes
 
 ### Web
@@ -53,7 +48,7 @@ use cheerio for global env and surface level chunks
 
 There are anywhere from 2 to 4 surface level js chunks:
 
-Older:
+Ancient:
 
 1. Chunk Loader
 2. Main Chunk
@@ -77,15 +72,10 @@ To find all chunks form the chunk loader (replace all newlines before running th
   - They started using css chunks from 2020
   - CSS chunks require you to prefix them with their module id, so a chunk `abc` with id `1` will be `1.abc.css`
 
-You could use ast parsing and stuff for getting chunks from chunk loader, but meh.
+You could use ast parsing and stuff for getting chunks from chunk loader, but meh.\
 Ehm apprently css chunks can have the same file again and again at least
 [`./files/chunkLoaders/2020.js.txt`](./files/chunkLoaders/2020.js.txt) does.
 
 ### Developer Portal
 
-Yep.
-
-### Android/iOS
-
-Discord cutely adds a `manifest.json` file in their builds which convinently
-lists all assets and stuff for you.
+No swc minfication goin' on 💕

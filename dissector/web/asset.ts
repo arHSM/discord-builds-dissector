@@ -2,10 +2,18 @@ import {
     ArrowFunctionExpression,
     FunctionExpression,
 } from "../../types/es2022";
-import { isIdentifier, isLiteral } from "../util";
+import {
+    isAssignmentExpression,
+    isBinaryExpression,
+    isBlockStatement,
+    isExpressionStatement,
+    isIdentifier,
+    isLiteral,
+    isMemberExpression,
+} from "../utils";
 
 /**
- * If the given module is an "asset module" this fucction returns the asset name.
+ * If the given module is an "asset module" this function returns the asset name.
  *
  * Here's what an "asset module" looks like:
  *
@@ -56,17 +64,17 @@ export function getAsset(module: FunctionExpression | ArrowFunctionExpression) {
         module.params.length === 3 &&
         isIdentifier(module.params[0]) &&
         isIdentifier(module.params[2]) &&
-        module.body.type === "BlockStatement" &&
+        isBlockStatement(module.body) &&
         module.body.body.length === 1 &&
-        module.body.body[0].type === "ExpressionStatement" &&
-        module.body.body[0].expression.type === "AssignmentExpression" &&
+        isExpressionStatement(module.body.body[0]) &&
+        isAssignmentExpression(module.body.body[0].expression) &&
         module.body.body[0].expression.operator === "=" &&
-        module.body.body[0].expression.left.type === "MemberExpression" &&
+        isMemberExpression(module.body.body[0].expression.left) &&
         isIdentifier(module.body.body[0].expression.left.object, module.params[0].name) &&
         isIdentifier(module.body.body[0].expression.left.property, "exports") &&
-        module.body.body[0].expression.right.type === "BinaryExpression" &&
+        isBinaryExpression(module.body.body[0].expression.right) &&
         module.body.body[0].expression.right.operator === "+" &&
-        module.body.body[0].expression.right.left.type === "MemberExpression" &&
+        isMemberExpression(module.body.body[0].expression.right.left) &&
         isIdentifier(module.body.body[0].expression.right.left.object, module.params[2].name) &&
         isIdentifier(module.body.body[0].expression.right.left.property, "p") &&
         isLiteral(module.body.body[0].expression.right.right) &&

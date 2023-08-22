@@ -9,7 +9,22 @@ import {
     Program,
     Property,
 } from "../../types/es2022";
-import { checkElements, isIdentifier, isLiteral } from "../util";
+import {
+    checkElements,
+    isArrayExpression,
+    isArrowFunctionExpression,
+    isAssignmentExpression,
+    isCallExpression,
+    isExpressionStatement,
+    isFunctionExpression,
+    isIdentifier,
+    isLiteral,
+    isLogicalExpression,
+    isMemberExpression,
+    isObjectExpression,
+    isProperty,
+    isThisExpression,
+} from "../utils";
 
 export interface Chunk {
     requiredChunks: number[];
@@ -157,13 +172,13 @@ export interface Chunk {
 export function processChunk(ast: Program): Chunk {
     let main = ast.body[0];
     assert(
-        main.type === "ExpressionStatement",
+        isExpressionStatement(main),
         "Program.body[0] must be of type ExpressionStatement."
     );
 
     let expr = main.expression;
     assert(
-        expr.type === "CallExpression",
+        isCallExpression(expr),
         "Program.body[0].expression must be of type CallExpression."
     );
 
@@ -182,28 +197,25 @@ export function processChunk(ast: Program): Chunk {
                 "Call to webpackJsonp must have 2-3 arguments."
             );
             assert(
-                expr.arguments[0].type === "ArrayExpression" &&
+                isArrayExpression(expr.arguments[0]) &&
                     checkElements(expr.arguments[0].elements, isLiteral),
                 "First argument to webpackJsonp must be of type ArrayExpression with all its element of type Literal."
             );
             assert(
-                expr.arguments[1].type === "ArrayExpression" &&
+                isArrayExpression(expr.arguments[1]) &&
                     checkElements(
                         expr.arguments[1].elements,
                         (element): element is FunctionExpression | null =>
-                            element === null ||
-                            element.type === "FunctionExpression"
+                            element === null || isFunctionExpression(element)
                     ),
                 "Second argument to webpackJsonp must be of type ArrayExpression with all its element of type FunctionExpression or null."
             );
-            // HACK: can't do undefined check in assert because TS doesn't like it
-            typeof expr.arguments[2] === "undefined" &&
-                (expr.arguments[2] = {
-                    type: "ArrayExpression",
-                    elements: [{ type: "Literal", value: "Fake" }],
-                });
+            // HACK: get around TS being unhappy with undefined check in assert
+            const executeIgnore = typeof expr.arguments[2] === "undefined";
+            executeIgnore &&
+                (expr.arguments[2] = { type: "ArrayExpression", elements: [] });
             assert(
-                expr.arguments[2].type === "ArrayExpression" &&
+                isArrayExpression(expr.arguments[2]) &&
                     checkElements(expr.arguments[2].elements, isLiteral),
                 "Third argument to webpackJsonp must be of type ArrayExpression with all its elements of type Literal."
             );
@@ -226,29 +238,28 @@ export function processChunk(ast: Program): Chunk {
                             .filter(element => element !== null)
                     )
                 ),
-                executeModules:
-                    expr.arguments[2].elements[0].value !== "Fake"
-                        ? expr.arguments[2].elements.map(
-                              literal => literal.value as number
-                          )
-                        : null,
+                executeModules: !executeIgnore
+                    ? expr.arguments[2].elements.map(
+                          literal => literal.value as number
+                      )
+                    : null,
             };
         // late 2018 - current
         case "MemberExpression":
             let calleeObject = callee.object;
             assert(
-                calleeObject.type === "AssignmentExpression",
+                isAssignmentExpression(calleeObject),
                 "Callee.object must be of type AssignmentExpression."
             );
 
             let calleeObjectLeft = calleeObject.left;
             assert(
-                calleeObjectLeft.type === "MemberExpression",
+                isMemberExpression(calleeObjectLeft),
                 "Callee.object.left must be of type MemberExpression."
             );
             assert(
                 isIdentifier(calleeObjectLeft.object, "window") ||
-                    calleeObjectLeft.object.type === "ThisExpression",
+                    isThisExpression(calleeObjectLeft.object),
                 "Callee.object.left.object must be of type Identifier with name window or of type ThisExpression."
             );
             assert(
@@ -258,16 +269,16 @@ export function processChunk(ast: Program): Chunk {
 
             let calleeObjectRight = calleeObject.right;
             assert(
-                calleeObjectRight.type === "LogicalExpression",
+                isLogicalExpression(calleeObjectRight),
                 "Callee.object.right must be of type LogcalExpresion."
             );
             assert(
-                calleeObjectRight.left.type === "MemberExpression",
+                isMemberExpression(calleeObjectRight.left),
                 "Callee.object.right.left must be of type MemberExpression."
             );
             assert(
                 isIdentifier(calleeObjectRight.left.object, "window") ||
-                    calleeObjectRight.left.object.type === "ThisExpression",
+                    isThisExpression(calleeObjectRight.left.object),
                 "Callee.object.right.left.object must be of type Identifier with name window or of type ThisExpression."
             );
             assert(
@@ -291,7 +302,7 @@ export function processChunk(ast: Program): Chunk {
                 "Push call's arguments must be of length 1."
             );
             assert(
-                expr.arguments[0].type === "ArrayExpression",
+                isArrayExpression(expr.arguments[0]),
                 "Push call's arument must be of type ArrayExpression."
             );
             assert(
@@ -302,7 +313,7 @@ export function processChunk(ast: Program): Chunk {
 
             assert(
                 expr.arguments[0].elements[0] &&
-                    expr.arguments[0].elements[0].type === "ArrayExpression" &&
+                    isArrayExpression(expr.arguments[0].elements[0]) &&
                     checkElements(
                         expr.arguments[0].elements[0].elements,
                         isLiteral
@@ -315,35 +326,27 @@ export function processChunk(ast: Program): Chunk {
                 case "webpackJsonp":
                     assert(
                         expr.arguments[0].elements[1] &&
-                            expr.arguments[0].elements[1].type ===
-                                "ArrayExpression" &&
+                            isArrayExpression(expr.arguments[0].elements[1]) &&
                             checkElements(
                                 expr.arguments[0].elements[1].elements,
                                 (
                                     element
                                 ): element is FunctionExpression | null =>
                                     element === null ||
-                                    element?.type === "FunctionExpression"
+                                    isFunctionExpression(element)
                             ),
                         "Second element of Push call's argument array must be of type ArrayExpression with all its elements of type FunctionExpression."
                     );
-                    // HACK: can't do undefined check in assert because TS doesn't like it
-                    typeof expr.arguments[0].elements[2]?.type ===
-                        "undefined" &&
+                    // HACK: get around TS being unhappy with undefined check in assert
+                    const executeIgnore =
+                        typeof expr.arguments[0].elements[2] === "undefined";
+                    executeIgnore &&
                         (expr.arguments[0].elements[2] = {
                             type: "ArrayExpression",
-                            elements: [
-                                {
-                                    type: "ArrayExpression",
-                                    elements: [
-                                        { type: "Literal", value: "Fake" },
-                                    ],
-                                },
-                            ],
+                            elements: [],
                         });
                     assert(
-                        expr.arguments[0].elements[2].type ===
-                            "ArrayExpression" &&
+                        isArrayExpression(expr.arguments[0].elements[2]) &&
                             checkElements(
                                 expr.arguments[0].elements[2].elements,
                                 (
@@ -351,7 +354,7 @@ export function processChunk(ast: Program): Chunk {
                                 ): element is {
                                     elements: Literal[];
                                 } & ArrayExpression =>
-                                    element?.type === "ArrayExpression" &&
+                                    isArrayExpression(element) &&
                                     checkElements(element.elements, isLiteral)
                             ),
                         "Third element of Push call's arument array must be of type ArrayExpression with all its elements of type ArrayExpression conaining elements of type Literal."
@@ -376,38 +379,35 @@ export function processChunk(ast: Program): Chunk {
                                     .filter(element => element !== null)
                             )
                         ),
-                        executeModules:
-                            expr.arguments[0].elements[2].elements[0]
-                                .elements[0].value !== "Fake"
-                                ? expr.arguments[0].elements[2].elements.flatMap(
-                                      elem =>
-                                          elem.elements.map(
-                                              elem => elem.value as number
-                                          )
-                                  )
-                                : null,
+                        executeModules: !executeIgnore
+                            ? expr.arguments[0].elements[2].elements.flatMap(
+                                  elem =>
+                                      elem.elements.map(
+                                          elem => elem.value as number
+                                      )
+                              )
+                            : null,
                     };
                 case "webpackChunkdiscord_app":
                     assert(
                         expr.arguments[0].elements[1] &&
-                            expr.arguments[0].elements[1].type ===
-                                "ObjectExpression" &&
+                            isObjectExpression(expr.arguments[0].elements[1]) &&
                             checkElements(
                                 expr.arguments[0].elements[1].properties,
                                 (
                                     element
                                 ): element is { key: Literal } & Property =>
-                                    element.type === "Property" &&
-                                    element.key.type === "Literal"
+                                    isProperty(element) &&
+                                    isLiteral(element.key)
                             ),
                         "Second element of Push call's argument array must be of type ObjectExpression with all its properties of type Property."
                     );
 
                     assert(
                         typeof expr.arguments[0].elements[2] === "undefined" ||
-                            (expr.arguments[0].elements[2] !== null &&
-                                expr.arguments[0].elements[2].type ===
-                                    "ArrowFunctionExpression"),
+                            isArrowFunctionExpression(
+                                expr.arguments[0].elements[2]
+                            ),
                         "Third element of Push call's argument array must be of type ArrowFunctionExpression."
                     );
 
