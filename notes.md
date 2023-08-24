@@ -13,11 +13,11 @@ Things I need to do.
 - [x] strings
 - [ ] locale strings
 - [ ] dependency
-- [ ] ~~exports~~ (this one's complicated and has a lot of loopholes)
 - [ ] experiment definitions
 - [ ] dismissables
 - [ ] action types (our beloved dispatcher)
 - [ ] science/analytics stuff (?)
+- [ ] minfied JSX SVG elements
 - [ ] enums
   - [ ] Endpoints
   - [ ] Routes

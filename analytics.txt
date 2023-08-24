@@ -1,0 +1,1346 @@
+// 2018
+t.AnalyticEvents = {
+    APP_OPENED: "app_opened",
+    APP_LANDING_VIEWED: "app_landing_viewed",
+    REGISTER_VIEWED: "register_viewed",
+    LOGIN_VIEWED: "login_viewed",
+    EXTERNAL_FINGERPRINT_DROPPED: "external_fingerprint_dropped",
+    INVITE_OPENED: "invite_opened",
+    INVITE_APP_INVOKED: "invite_app_invoked",
+    INVITE_APP_OPENED: "invite_app_opened",
+    INVITE_LEARN_MORE: "invite_learn_more",
+    INVITE_LOGIN: "invite_login",
+    INVITE_LOGIN_SUCCESSFUL: "invite_login_successful",
+    INSTANT_INVITE_SHARED: "instant_invite_shared",
+    QUICKSWITCHER_OPENED: "quickswitcher_opened",
+    QUICKSWITCHER_CLOSED: "quickswitcher_closed",
+    QUICKSWITCHER_RESULT_SELECTED: "quickswitcher_result_selected",
+    NOTIFICATION_CLICKED: "notification_clicked",
+    ACK_MESSAGES: "ack_messages",
+    JOIN_VOICE_CHANNEL: "join_voice_channel",
+    LEAVE_VOICE_CHANNEL: "leave_voice_channel",
+    VOICE_CONNECT: "voice_connect",
+    START_SPEAKING: "start_speaking",
+    START_LISTENING: "start_listening",
+    STOP_SPEAKING: "stop_speaking",
+    SETTINGS_PANE_VIEWED: "settings_pane_viewed",
+    CHANNEL_NOTICE_VIEWED: "channel_notice_viewed",
+    CHANNEL_NOTICE_CLOSED: "channel_notice_closed",
+    PERMISSIONS_REQUESTED: "permissions_requested",
+    PERMISSIONS_ACKED: "permissions_acked",
+    LOCAL_SETTINGS_UPDATED: "local_settings_updated",
+    APP_NOTICE_CLOSED: "app_notice_closed",
+    VIDEO_LAYOUT_TOGGLED: "video_layout_toggled",
+    VIDEO_INPUT_TOGGLED: "video_input_toggled",
+    AUTHORIZED_APP_CONNECTED: "authorized_app_connected",
+    OPEN_MODAL: "open_modal",
+    OPEN_POPOUT: "open_popout",
+    CREATE_GUILD_VIEWED: "create_guild_viewed",
+    JOIN_GUILD_VIEWED: "join_guild_viewed",
+    ACTIVITY_FEED_VIEWED: "af_viewed",
+    ACTIVITY_FEED_LOADED: "af_loaded",
+    ACTIVITY_FEED_EXITED: "af_exited",
+    ACTIVITY_FEED_CUSTOMIZATION_OPENED: "af_customization_opened",
+    ACTIVITY_FEED_CUSTOMIZATION_SAVED: "af_customization_saved",
+    ACTIVITY_FEED_NEWS_OPENED: "af_news_opened",
+    ACTIVITY_FEED_NEWS_VIEWED: "af_news_viewed",
+    ACTIVITY_FEED_NEWS_CHANGED: "af_news_changed",
+    ACTIVITY_FEED_VOICE_CHANNEL_VISITED: "af_voice_channel_visited",
+    ACTIVITY_FEED_GUILD_VISITED: "af_guild_visited",
+    ACTIVITY_FEED_DM_VISITED: "af_dm_visited",
+    ACTIVITY_FEED_USER_POPOUT_OPENED: "af_user_popout_opened",
+    ACTIVITY_FEED_GAME_OPENED: "af_game_opened",
+    GAME_OPENED: "game_opened",
+    LAUNCH_GAME: "launch_game",
+    ACTIVITY_UPDATED: "activity_updated",
+    BROWSER_HANDOFF_SUCCEEDED: "browser_handoff_succeeded",
+    SHOW_TUTORIAL: "show_tutorial",
+    CLOSE_TUTORIAL: "close_tutorial",
+    DISMISS_ALL_TUTORIALS: "dismiss_all_tutorials",
+    INVITE_SENT: "invite_sent",
+    OVERLAY_HOOKING: "overlay_hooking",
+    OVERLAY_HOOKED: "overlay_hooked",
+    SPOTIFY_AUTO_PAUSED: "spotify_auto_paused",
+    INVITE_SUGGESTION_OPENED: "invite_suggestion_opened",
+    GUILD_VIEWED: "guild_viewed",
+    FRIENDS_LIST_VIEWED: "friends_list_viewed",
+    CONNECTED_ACCOUNT_INITIATED: "connected_account_initiated",
+    LFG_BROWSER_VIEWED: "lfg_browser_viewed",
+    LFG_BROWSER_EXITED: "lfg_browser_exited",
+    LFG_GROUP_JOINED: "lfg_group_joined",
+    LFG_GROUP_LEFT: "lfg_group_left",
+    LFG_GROUP_REPORTED: "lfg_group_reported",
+    DOWNLOAD_APP: "download_app",
+    PREMIUM_PAGE_OPENED: "premium_page_opened",
+    PREMIUM_PURCHASE_STARTED: "premium_purchase_started",
+    PREMIUM_PURCHASE_COMPLETED: "premium_purchase_completed",
+    PREMIUM_CANCELED: "premium_canceled",
+    PREMIUM_RESUBSCRIBED: "premium_resubscribed",
+    PREMIUM_UPGRADE_COMPLETED: "premium_upgrade_completed",
+    PREMIUM_CREDIT_CARD_REMOVED: "premium_cc_removed",
+    CHANNEL_MEMBER_KICKED: "channel_member_kicked",
+};
+
+// 2018 late
+t.AnalyticEvents = Object.freeze({
+    APP_OPENED: "app_opened",
+    APP_LANDING_VIEWED: "app_landing_viewed",
+    REGISTER_VIEWED: "register_viewed",
+    LOGIN_VIEWED: "login_viewed",
+    EXTERNAL_FINGERPRINT_DROPPED: "external_fingerprint_dropped",
+    EXTERNAL_DYNAMIC_LINK_RECEIVED: "external_dynamic_link_received",
+    INVITE_OPENED: "invite_opened",
+    INVITE_VIEWED: "invite_viewed",
+    INVITE_RESOLVED: "resolve_invite",
+    INVITE_APP_INVOKED: "invite_app_invoked",
+    INVITE_APP_OPENED: "invite_app_opened",
+    INVITE_LEARN_MORE: "invite_learn_more",
+    INVITE_LOGIN: "invite_login",
+    INVITE_LOGIN_SUCCESSFUL: "invite_login_successful",
+    INSTANT_INVITE_SHARED: "instant_invite_shared",
+    COPY_INSTANT_INVITE: "copy_instant_invite",
+    VERIFY_ACCOUNT_APP_OPENED: "verify_account_app_opened",
+    QUICKSWITCHER_OPENED: "quickswitcher_opened",
+    QUICKSWITCHER_CLOSED: "quickswitcher_closed",
+    QUICKSWITCHER_RESULT_SELECTED: "quickswitcher_result_selected",
+    ENABLE_NOTIFICATIONS: "enable_notifications",
+    NOTIFICATION_CLICKED: "notification_clicked",
+    NOTIFICATION_VIEWED: "notification_viewed",
+    ACK_MESSAGES: "ack_messages",
+    VOICE_CHANNEL_SELECTED: "voice_channel_selected",
+    JOIN_VOICE_CHANNEL: "join_voice_channel",
+    LEAVE_VOICE_CHANNEL: "leave_voice_channel",
+    VOICE_CONNECTION_FAILURE: "voice_connection_failure",
+    VOICE_CONNECTION_SUCCESS: "voice_connection_success",
+    VOICE_DISCONNECT: "voice_disconnect",
+    START_SPEAKING: "start_speaking",
+    START_LISTENING: "start_listening",
+    MEMBER_LIST_VIEWED: "member_list_viewed",
+    DM_LIST_VIEWED: "dm_list_viewed",
+    SETTINGS_PANE_VIEWED: "settings_pane_viewed",
+    CHANNEL_NOTICE_VIEWED: "channel_notice_viewed",
+    CHANNEL_NOTICE_CLOSED: "channel_notice_closed",
+    PREMIUM_PROMOTION_OPENED: "premium_promotion_opened",
+    PERMISSIONS_REQUESTED: "permissions_requested",
+    PERMISSIONS_ACKED: "permissions_acked",
+    LOCAL_SETTINGS_UPDATED: "local_settings_updated",
+    APP_NOTICE_VIEWED: "app_notice_viewed",
+    APP_NOTICE_CLOSED: "app_notice_closed",
+    VIDEO_LAYOUT_TOGGLED: "video_layout_toggled",
+    VIDEO_INPUT_TOGGLED: "video_input_toggled",
+    AUTHORIZED_APP_CONNECTED: "authorized_app_connected",
+    OPEN_MODAL: "open_modal",
+    OPEN_POPOUT: "open_popout",
+    MODAL_DISMISSED: "modal_dismissed",
+    CREATE_GUILD_VIEWED: "create_guild_viewed",
+    JOIN_GUILD_VIEWED: "join_guild_viewed",
+    ACTIVITY_FEED_VIEWED: "af_viewed",
+    ACTIVITY_FEED_LOADED: "af_loaded",
+    ACTIVITY_FEED_EXITED: "af_exited",
+    ACTIVITY_FEED_CUSTOMIZATION_OPENED: "af_customization_opened",
+    ACTIVITY_FEED_CUSTOMIZATION_SAVED: "af_customization_saved",
+    ACTIVITY_FEED_VOICE_CHANNEL_VISITED: "af_voice_channel_visited",
+    ACTIVITY_FEED_GUILD_VISITED: "af_guild_visited",
+    ACTIVITY_FEED_DM_VISITED: "af_dm_visited",
+    ACTIVITY_FEED_USER_POPOUT_OPENED: "af_user_popout_opened",
+    ACTIVITY_FEED_GAME_POPOUT_OPENED: "af_game_popout_opened",
+    GAME_NEWS_CHANGED: "game_news_changed",
+    GAME_NEWS_OPENED: "game_news_opened",
+    APPLICATION_OPENED: "application_opened",
+    LAUNCH_GAME: "launch_game",
+    ACTIVITY_UPDATED: "activity_updated",
+    BROWSER_HANDOFF_SUCCEEDED: "browser_handoff_succeeded",
+    SHOW_TUTORIAL: "show_tutorial",
+    CLOSE_TUTORIAL: "close_tutorial",
+    DISMISS_ALL_TUTORIALS: "dismiss_all_tutorials",
+    INVITE_SENT: "invite_sent",
+    HOOK_RESULT: "hook_result",
+    OVERLAY_TOGGLED: "overlay_toggled",
+    OVERLAY_HOOK_RESULT: "overlay_hook_result",
+    OVERLAY_INITIALIZED: "overlay_initialized",
+    OVERLAY_LOCKED: "overlay_locked",
+    OVERLAY_UNLOCKED: "overlay_unlocked",
+    OVERLAY_PIN_TOGGLED: "overlay_pin_toggled",
+    OVERLAY_LAYOUT_UPDATED: "overlay_layout_updated",
+    OVERLAY_SETTINGS_UPDATED: "overlay_settings_updated",
+    SPOTIFY_AUTO_PAUSED: "spotify_auto_paused",
+    SPOTIFY_BUTTON_CLICKED: "spotify_button_clicked",
+    SPOTIFY_LISTEN_ALONG_STARTED: "spotify_listen_along_started",
+    SPOTIFY_LISTEN_ALONG_ENDED: "spotify_listen_along_ended",
+    INVITE_SUGGESTION_OPENED: "invite_suggestion_opened",
+    GUILD_VIEWED: "guild_viewed",
+    FRIENDS_LIST_VIEWED: "friends_list_viewed",
+    CONNECTED_ACCOUNT_INITIATED: "connected_account_initiated",
+    DOWNLOAD_APP: "download_app",
+    PAYMENT_FLOW_STARTED: "payment_flow_started",
+    PAYMENT_FLOW_COMPLETED: "payment_flow_completed",
+    PAYMENT_FLOW_STEP: "payment_flow_step",
+    PAYMENT_FLOW_FAILED: "payment_flow_failed",
+    PREMIUM_UPGRADE_STARTED: "premium_upgrade_started",
+    CHANNEL_MEMBER_KICKED: "channel_member_kicked",
+    CHANNEL_OPENED: "channel_opened",
+    NUO_TRANSITION_KEY: "nuo_transition",
+    NUO_GUILD_DATA: "nuo_guild_info",
+    SOUNDSHARE_ATTACHED: "soundshare_attached",
+    SOUNDSHARE_TRANSMITTING: "soundshare_transmitting",
+    VIDEOHOOK_INITIALIZED: "videohook_initialized",
+    SCREENSHARE_FINISHED: "screenshare_finished",
+    SCREENSHARE_FAILED: "screenshare_failed",
+    CHANGE_LOG_OPENED: "change_log_opened",
+    CHANGE_LOG_CLOSED: "change_log_closed",
+    CHANGE_LOG_CTA_CLICKED: "change_log_cta_clicked",
+    ACCOUNT_LINK_STEP: "account_link_step",
+    ACCOUNT_LINK_FAILED: "account_link_failed",
+    CONNECTED_ACCOUNT_VIEWED: "connected_account_viewed",
+    MEDIA_DEVICE_CHANGED: "media_device_changed",
+    USER_SETTINGS_KEYBIND_UPDATED: "user_settings_keybind_updated",
+    DISPATCH_PATCH_STARTED: "gl_patch_started",
+    DISPATCH_PATCH_PAUSED: "gl_patch_paused",
+    DISPATCH_PATCH_FAILED: "gl_patch_failed",
+    DISPATCH_PATCH_VERIFICATION_FAILED: "gl_verification_failed",
+    DISPATCH_PATCH_COMPLETE: "gl_patch_complete",
+    DISPATCH_PATCH_CANCELLED: "gl_patch_cancelled",
+    DISPATCH_APPLICATION_UNINSTALLED: "gl_application_uninstalled",
+    STORE_DIRECTORY_VIEWED: "store_directory_viewed",
+    STORE_DIRECTORY_BROWSE_VIEWED: "store_directory_browse_viewed",
+    STORE_DIRECTORY_FILTER_UPDATED: "store_directory_filter_updated",
+    STORE_DIRECTORY_EXITED: "store_directory_exited",
+    STORE_DIRECTORY_HERO_VIEWED: "store_directory_hero_viewed",
+    STORE_DIRECTORY_CARD_INTERACTED: "store_directory_card_interacted",
+    STORE_LISTING_VIEWED: "store_listing_viewed",
+    STORE_LISTING_EXITED: "store_listing_exited",
+    STORE_LISTING_MEDIA_SCROLLED: "store_listing_media_scrolled",
+    LIBRARY_VIEWED: "library_viewed",
+    LIBRARY_INSTALL_INITIATED: "library_install_initiated",
+    LIBRARY_REPAIR_INITIATED: "library_repair_initiated",
+    LIBRARY_UNINSTALL_INITIATED: "library_uninstall_initiated",
+    LIBRARY_SCANNING_ENABLED: "library_scanning_enabled",
+    PROMOTION_VIEWED: "promotion_viewed",
+    APPLICATION_SETTINGS_UPDATED: "application_settings_updated",
+    NETWORKING_SYSTEM_METRICS: "networking_system_metrics",
+    NETWORKING_PEER_METRICS: "networking_peer_metrics",
+    DYNAMIC_LINK_TYPE_SETTINGS: "settings",
+    DYNAMIC_LINK_TYPE_LIBRARY: "library",
+    DYNAMIC_LINK_TYPE_STORE: "store",
+    DYNAMIC_LINK_TYPE_INVITE: "invite",
+    MIC_TESTING_STARTED: "mic_testing_started",
+    MIC_TESTING_STOPPED: "mic_testing_stopped",
+    GIFT_CODE_SENT: "gift_code_sent",
+    GIFT_CODE_RESOLVED: "gift_code_resolved",
+    GIFT_CODE_COPIED: "gift_code_copied",
+    SLASH_COMMAND_USED: "slash_command_used",
+    SEARCH_RESULT_VIEWED: "search_result_viewed",
+    SEARCH_RESULT_SELECTED: "search_result_selected",
+    SEARCH_RESULT_EXPANDED: "search_result_expanded",
+    SEARCH_RESULT_SORT_CHANGED: "search_result_sort_changed",
+    SEARCH_OPENED: "search_opened",
+    SEARCH_STARTED: "search_started",
+    SEARCH_CLOSED: "search_closed",
+    JUMP: "jump",
+    GIF_FAVORITED: "gif_favorited",
+    GIF_UNFAVORITED: "gif_unfavorited",
+})(
+    // 2021
+    function (e) {
+        (e.APP_OPENED = "app_opened"),
+            (e.APP_CRASHED = "app_crashed"),
+            (e.APP_UI_VIEWED = "app_ui_viewed"),
+            (e.APP_LAUNCH_COMPLETED = "app_launch_completed"),
+            (e.APP_LANDING_VIEWED = "app_landing_viewed"),
+            (e.APP_MODULES_UPDATED = "app_modules_updated"),
+            (e.REGISTER_VIEWED = "register_viewed"),
+            (e.LOGIN_VIEWED = "login_viewed"),
+            (e.READY_PAYLOAD_RECEIVED = "ready_payload_received"),
+            (e.EXTERNAL_FINGERPRINT_DROPPED = "external_fingerprint_dropped"),
+            (e.EXTERNAL_DYNAMIC_LINK_RECEIVED =
+                "external_dynamic_link_received"),
+            (e.INVITE_OPENED = "invite_opened"),
+            (e.INVITE_VIEWED = "invite_viewed"),
+            (e.INVITE_RESOLVED = "resolve_invite"),
+            (e.INVITE_APP_INVOKED = "invite_app_invoked"),
+            (e.INVITE_APP_OPENED = "invite_app_opened"),
+            (e.INVITE_LEARN_MORE = "invite_learn_more"),
+            (e.INVITE_LOGIN = "invite_login"),
+            (e.INVITE_LOGIN_SUCCESSFUL = "invite_login_successful"),
+            (e.INSTANT_INVITE_SHARED = "instant_invite_shared"),
+            (e.COPY_INSTANT_INVITE = "copy_instant_invite"),
+            (e.VERIFY_ACCOUNT_APP_OPENED = "verify_account_app_opened"),
+            (e.QUICKSWITCHER_OPENED = "quickswitcher_opened"),
+            (e.QUICKSWITCHER_CLOSED = "quickswitcher_closed"),
+            (e.QUICKSWITCHER_RESULT_SELECTED = "quickswitcher_result_selected"),
+            (e.ENABLE_NOTIFICATIONS = "enable_notifications"),
+            (e.NOTIFICATION_CLICKED = "notification_clicked"),
+            (e.NOTIFICATION_RENDERED = "notification_rendered"),
+            (e.NOTIFICATION_VIEWED = "notification_viewed"),
+            (e.NOTIFICATION_SETTINGS_UPDATED = "notification_settings_updated"),
+            (e.ACK_MESSAGES = "ack_messages"),
+            (e.INBOX_CHANNEL_ACKED = "inbox_channel_acked"),
+            (e.INBOX_CHANNEL_CLICKED = "inbox_channel_clicked"),
+            (e.INBOX_CHANNEL_COLLAPSED = "inbox_channel_collapsed"),
+            (e.VOICE_CHANNEL_SELECTED = "voice_channel_selected"),
+            (e.JOIN_VOICE_CHANNEL = "join_voice_channel"),
+            (e.LEAVE_VOICE_CHANNEL = "leave_voice_channel"),
+            (e.VOICE_CONNECTION_FAILURE = "voice_connection_failure"),
+            (e.VOICE_CONNECTION_SUCCESS = "voice_connection_success"),
+            (e.VOICE_DISCONNECT = "voice_disconnect"),
+            (e.START_SPEAKING = "start_speaking"),
+            (e.START_LISTENING = "start_listening"),
+            (e.VOICE_WATCHDOG_TIMEOUT = "voice_watchdog_timeout"),
+            (e.VOICE_PROCESSING = "voice_processing"),
+            (e.CALL_REPORT_PROBLEM = "call_report_problem"),
+            (e.NOISE_CANCELLATION_LINK_CLICKED =
+                "noise_cancellation_link_clicked"),
+            (e.MEDIA_SESSION_JOINED = "media_session_joined"),
+            (e.MEMBER_LIST_VIEWED = "member_list_viewed"),
+            (e.DM_LIST_VIEWED = "dm_list_viewed"),
+            (e.SETTINGS_PANE_VIEWED = "settings_pane_viewed"),
+            (e.RICH_CHAT_TEXT_BOX_TOGGLED = "rich_chat_text_box_toggled"),
+            (e.CHANNEL_NOTICE_VIEWED = "channel_notice_viewed"),
+            (e.CHANNEL_NOTICE_CLOSED = "channel_notice_closed"),
+            (e.CHANNEL_NOTICE_CTA_CLICKED = "channel_notice_cta_clicked"),
+            (e.PREMIUM_PROMOTION_OPENED = "premium_promotion_opened"),
+            (e.PERMISSIONS_REQUESTED = "permissions_requested"),
+            (e.PERMISSIONS_ACKED = "permissions_acked"),
+            (e.LOCAL_SETTINGS_UPDATED = "local_settings_updated"),
+            (e.APP_NOTICE_VIEWED = "app_notice_viewed"),
+            (e.APP_NOTICE_CLOSED = "app_notice_closed"),
+            (e.APP_NOTICE_PRIMARY_CTA_OPENED = "app_notice_primary_cta_opened"),
+            (e.VIDEO_LAYOUT_TOGGLED = "video_layout_toggled"),
+            (e.VIDEO_INPUT_TOGGLED = "video_input_toggled"),
+            (e.AUTHORIZED_APP_CONNECTED = "authorized_app_connected"),
+            (e.OPEN_MODAL = "open_modal"),
+            (e.OPEN_POPOUT = "open_popout"),
+            (e.MODAL_DISMISSED = "modal_dismissed"),
+            (e.HOVER_MENU_OPENED = "hover_menu_opened"),
+            (e.CREATE_GUILD_VIEWED = "create_guild_viewed"),
+            (e.JOIN_GUILD_VIEWED = "join_guild_viewed"),
+            (e.GUILD_TEMPLATE_SELECTED = "guild_template_selected"),
+            (e.GAME_NEWS_CHANGED = "game_news_changed"),
+            (e.GAME_NEWS_OPENED = "game_news_opened"),
+            (e.APPLICATION_OPENED = "application_opened"),
+            (e.LAUNCH_GAME = "launch_game"),
+            (e.ACTIVITY_UPDATED = "activity_updated"),
+            (e.ACTIVITY_SESSION_JOINED = "activity_session_joined"),
+            (e.ACTIVITY_SESSION_LEFT = "activity_session_left"),
+            (e.BROWSER_HANDOFF_SUCCEEDED = "browser_handoff_succeeded"),
+            (e.SHOW_TUTORIAL = "show_tutorial"),
+            (e.CLOSE_TUTORIAL = "close_tutorial"),
+            (e.DISMISS_ALL_TUTORIALS = "dismiss_all_tutorials"),
+            (e.INVITE_SENT = "invite_sent"),
+            (e.HOOK_RESULT = "hook_result"),
+            (e.OVERLAY_TOGGLED = "overlay_toggled"),
+            (e.OVERLAY_HOOK_RESULT = "overlay_hook_result"),
+            (e.OVERLAY_INITIALIZED = "overlay_initialized"),
+            (e.OVERLAY_LOCKED = "overlay_locked"),
+            (e.OVERLAY_UNLOCKED = "overlay_unlocked"),
+            (e.OVERLAY_PIN_TOGGLED = "overlay_pin_toggled"),
+            (e.OVERLAY_LAYOUT_UPDATED = "overlay_layout_updated"),
+            (e.OVERLAY_SETTINGS_UPDATED = "overlay_settings_updated"),
+            (e.OVERLAY_PERF_INFO = "overlay_perf_info"),
+            (e.SPOTIFY_AUTO_PAUSED = "spotify_auto_paused"),
+            (e.SPOTIFY_BUTTON_CLICKED = "spotify_button_clicked"),
+            (e.SPOTIFY_LISTEN_ALONG_STARTED = "spotify_listen_along_started"),
+            (e.SPOTIFY_LISTEN_ALONG_ENDED = "spotify_listen_along_ended"),
+            (e.STREAMER_MODE_TOGGLE = "streamer_mode_toggle"),
+            (e.UPDATE_STREAMER_MODE_SETTINGS = "update_streamer_mode_settings"),
+            (e.INVITE_SUGGESTION_OPENED = "invite_suggestion_opened"),
+            (e.GUILD_VIEWED = "guild_viewed"),
+            (e.FRIENDS_LIST_VIEWED = "friends_list_viewed"),
+            (e.FRIEND_ADD_VIEWED = "friend_add_viewed"),
+            (e.FRIEND_ADD_NEARBY_CONNECTED = "friend_add_nearby_connected"),
+            (e.FRIEND_REQUEST_FAILED = "friend_request_failed"),
+            (e.CONNECTED_ACCOUNT_INITIATED = "connected_account_initiated"),
+            (e.DOWNLOAD_APP = "download_app"),
+            (e.PAYMENT_FLOW_STARTED = "payment_flow_started"),
+            (e.PAYMENT_FLOW_COMPLETED = "payment_flow_completed"),
+            (e.PAYMENT_FLOW_STEP = "payment_flow_step"),
+            (e.PAYMENT_FLOW_FAILED = "payment_flow_failed"),
+            (e.PREMIUM_UPGRADE_STARTED = "premium_upgrade_started"),
+            (e.CHANNEL_MEMBER_KICKED = "channel_member_kicked"),
+            (e.CHANNEL_OPENED = "channel_opened"),
+            (e.NUO_TRANSITION = "nuo_transition"),
+            (e.NUO_GUILD_DATA = "nuo_guild_info"),
+            (e.SOUNDSHARE_ATTACHED = "soundshare_attached"),
+            (e.SOUNDSHARE_FAILED = "soundshare_failed"),
+            (e.SOUNDSHARE_TRANSMITTING = "soundshare_transmitting"),
+            (e.VIDEOHOOK_INITIALIZED = "videohook_initialized"),
+            (e.SCREENSHARE_FINISHED = "screenshare_finished"),
+            (e.SCREENSHARE_FAILED = "screenshare_failed"),
+            (e.VIDEO_STREAM_ENDED = "video_stream_ended"),
+            (e.VIDEO_STREAM_STARTED = "video_stream_started"),
+            (e.STREAM_WARNING_TRIGGERED = "stream_warning_triggered"),
+            (e.STREAM_REPORT_PROBLEM = "stream_report_problem"),
+            (e.CHANGE_LOG_OPENED = "change_log_opened"),
+            (e.CHANGE_LOG_CLOSED = "change_log_closed"),
+            (e.CHANGE_LOG_VIDEO_INTERACTED = "change_log_video_interacted"),
+            (e.CHANGE_LOG_CTA_CLICKED = "change_log_cta_clicked"),
+            (e.ACCOUNT_LINK_STEP = "account_link_step"),
+            (e.ACCOUNT_LINK_FAILED = "account_link_failed"),
+            (e.CONNECTED_ACCOUNT_VIEWED = "connected_account_viewed"),
+            (e.MEDIA_DEVICE_CHANGED = "media_device_changed"),
+            (e.USER_SETTINGS_KEYBIND_UPDATED = "user_settings_keybind_updated"),
+            (e.USER_ATTRIBUTION_RECEIVED = "user_attribution_received"),
+            (e.USER_AVATAR_UPDATED = "user_avatar_updated"),
+            (e.DISPATCH_PATCH_STARTED = "gl_patch_started"),
+            (e.DISPATCH_PATCH_PAUSED = "gl_patch_paused"),
+            (e.DISPATCH_PATCH_FAILED = "gl_patch_failed"),
+            (e.DISPATCH_PATCH_VERIFICATION_FAILED = "gl_verification_failed"),
+            (e.DISPATCH_PATCH_COMPLETE = "gl_patch_complete"),
+            (e.DISPATCH_PATCH_CANCELLED = "gl_patch_cancelled"),
+            (e.DISPATCH_APPLICATION_UNINSTALLED = "gl_application_uninstalled"),
+            (e.PREMIUM_MARKETING_PAGE_VIEWED = "premium_marketing_page_viewed"),
+            (e.PREMIUM_MARKETING_PAGE_EXITED = "premium_marketing_page_exited"),
+            (e.STORE_DIRECTORY_VIEWED = "store_directory_viewed"),
+            (e.STORE_DIRECTORY_BROWSE_VIEWED = "store_directory_browse_viewed"),
+            (e.STORE_DIRECTORY_FILTER_UPDATED =
+                "store_directory_filter_updated"),
+            (e.STORE_DIRECTORY_EXITED = "store_directory_exited"),
+            (e.STORE_DIRECTORY_HERO_VIEWED = "store_directory_hero_viewed"),
+            (e.STORE_LISTING_VIEWED = "store_listing_viewed"),
+            (e.STORE_LISTING_EXITED = "store_listing_exited"),
+            (e.STORE_LISTING_MEDIA_SCROLLED = "store_listing_media_scrolled"),
+            (e.LIBRARY_VIEWED = "library_viewed"),
+            (e.LIBRARY_INSTALL_INITIATED = "library_install_initiated"),
+            (e.LIBRARY_REPAIR_INITIATED = "library_repair_initiated"),
+            (e.LIBRARY_UNINSTALL_INITIATED = "library_uninstall_initiated"),
+            (e.LIBRARY_SCANNING_ENABLED = "library_scanning_enabled"),
+            (e.PROMOTION_VIEWED = "promotion_viewed"),
+            (e.APPLICATION_SETTINGS_UPDATED = "application_settings_updated"),
+            (e.NETWORKING_SYSTEM_METRICS = "networking_system_metrics"),
+            (e.NETWORKING_PEER_METRICS = "networking_peer_metrics"),
+            (e.MIC_TESTING_STARTED = "mic_testing_started"),
+            (e.MIC_TESTING_STOPPED = "mic_testing_stopped"),
+            (e.GIFT_CODE_SENT = "gift_code_sent"),
+            (e.GIFT_CODE_RESOLVED = "gift_code_resolved"),
+            (e.GIFT_CODE_COPIED = "gift_code_copied"),
+            (e.SLASH_COMMAND_USED = "slash_command_used"),
+            (e.KEYBOARD_SHORTCUT_USED = "keyboard_shortcut_used"),
+            (e.KEYBOARD_MODE_TOGGLED = "keyboard_mode_toggled"),
+            (e.SEARCH_RESULT_VIEWED = "search_result_viewed"),
+            (e.SEARCH_RESULT_SELECTED = "search_result_selected"),
+            (e.SEARCH_RESULT_EXPANDED = "search_result_expanded"),
+            (e.SEARCH_RESULT_SORT_CHANGED = "search_result_sort_changed"),
+            (e.SEARCH_OPENED = "search_opened"),
+            (e.SEARCH_STARTED = "search_started"),
+            (e.SEARCH_CLOSED = "search_closed"),
+            (e.JUMP = "jump"),
+            (e.GIF_FAVORITED = "gif_favorited"),
+            (e.GIF_UNFAVORITED = "gif_unfavorited"),
+            (e.GUILD_DISCOVERY_VIEWED = "guild_discovery_viewed"),
+            (e.GUILD_DISCOVERY_GUILD_SELECTED =
+                "guild_discovery_guild_selected"),
+            (e.GUILD_DISCOVERY_EXITED = "guild_discovery_exited"),
+            (e.NEWS_EDITOR_VIEWED = "news_card_editor_viewed"),
+            (e.NEWS_UPDATED = "news_card_updated"),
+            (e.NEWS_LINK_COPIED = "news_link_copied"),
+            (e.NEWS_LINK_SHARED = "news_link_shared"),
+            (e.CUSTOM_STATUS_UPDATED = "custom_status_updated"),
+            (e.TEXT_COPIED = "text_copied"),
+            (e.TEXT_SHARED = "text_shared"),
+            (e.NAV_DRAWER_OPENED = "nav_drawer_opened"),
+            (e.EXPERIMENT_USER_TRIGGERED = "experiment_user_triggered"),
+            (e.EXPERIMENT_GUILD_TRIGGERED = "experiment_guild_triggered"),
+            (e.EXPERIMENT_CUSTOM_EVENT = "experiment_custom_event"),
+            (e.GUILD_INSIGHTS_SETTINGS_CTA_CLICKED =
+                "guild_insights_settings_cta_clicked"),
+            (e.GUILD_SETTINGS_DISCOVERY_VIEWED =
+                "guild_settings_discovery_viewed"),
+            (e.GUILD_SETTINGS_DISCOVERY_UPDATED =
+                "guild_settings_discovery_updated"),
+            (e.OAUTH2_AUTHORIZE_VIEWED = "oauth2_authorize_viewed"),
+            (e.GUILD_OUTAGE_VIEWED = "guild_outage_viewed"),
+            (e.CONTACT_SYNC_FLOW_KEY = "relationship_sync_flow"),
+            (e.LOGIN_SUCCESSFUL = "login_successful"),
+            (e.REPLY_STARTED = "reply_started"),
+            (e.GUILD_TEMPLATE_APP_OPENED = "guild_template_app_opened"),
+            (e.GUILD_TEMPLATE_OPENED = "guild_template_opened"),
+            (e.GUILD_TEMPLATE_RESOLVED = "guild_template_resolved"),
+            (e.GUILD_TEMPLATE_LINK_SENT = "guild_template_link_sent"),
+            (e.ACTIVITY_FEED_CUSTOMIZATION_OPENED = "af_customization_opened"),
+            (e.ACTIVITY_FEED_CUSTOMIZATION_SAVED = "af_customization_saved"),
+            (e.ACTIVITY_FEED_VOICE_CHANNEL_VISITED =
+                "af_voice_channel_visited"),
+            (e.ACTIVITY_FEED_GUILD_VISITED = "af_guild_visited"),
+            (e.ACTIVITY_FEED_DM_VISITED = "af_dm_visited"),
+            (e.AGE_GATE_SUBMITTED = "age_gate_submitted"),
+            (e.GUILD_WELCOME_SCREEN_SETTINGS_UPDATED =
+                "guild_welcome_screen_settings_updated"),
+            (e.GUILD_WELCOME_SCREEN_OPTION_SELECTED =
+                "guild_welcome_screen_option_selected"),
+            (e.MESSAGE_REPORTED = "message_reported"),
+            (e.EXPRESSION_PICKER_TAB_CLICKED = "expression_picker_tab_clicked"),
+            (e.EXPRESSION_PICKER_OPENED = "expression_picker_opened"),
+            (e.EXPRESSION_PICKER_CATEGORY_SELECTED =
+                "expression_picker_category_selected"),
+            (e.EXPRESSION_PICKER_CATEGORY_COLLAPSE_TOGGLED =
+                "expression_picker_category_collapse_toggled"),
+            (e.EXPRESSION_PICKER_STICKER_SHOP_VIEWED =
+                "expression_picker_sticker_shop_viewed"),
+            (e.STICKER_PACK_VIEW_ALL = "sticker_pack_view_all"),
+            (e.STICKER_SEARCH_VIEW_ALL = "sticker_search_view_all"),
+            (e.STICKER_SUGGESTIONS_ENABLED_TOGGLED =
+                "sticker_suggestions_enabled_toggled"),
+            (e.AUTO_SUGGEST_DISPLAYED = "auto_suggest_displayed"),
+            (e.AUTO_SUGGEST_EXPRESSION_SELECTED =
+                "auto_suggest_expression_selected"),
+            (e.NUDGE_DISPLAYED = "nudge_displayed"),
+            (e.NUDGE_OPENED = "nudge_opened"),
+            (e.CHAT_INPUT_COMPONENT_VIEWED = "chat_input_component_viewed"),
+            (e.GUILD_MEMBERSHIP_GATE_SETTINGS_UPDATED =
+                "guild_membership_gate_settings_updated"),
+            (e.MKTG_APPLICATION_STEP = "mktg_application_step"),
+            (e.SERVER_SETUP_CTA_CLICKED = "server_setup_cta_clicked"),
+            (e.HELP_CLICKED = "help_clicked"),
+            (e.EMOJI_UPSELL_POPOUT_MORE_EMOJIS_OPENED =
+                "emoji_upsell_popout_more_emojis_opened"),
+            (e.FILE_UPLOAD_ALERT_VIEWED = "file_upload_alert_viewed"),
+            (e.FAILED_MESSAGE_RESOLVED = "failed_message_resolved"),
+            (e.VIEW_AS_ROLES_SELECTED = "view_as_roles_selected"),
+            (e.GUILD_CREATION_INTENT_SELECTED =
+                "guild_creation_intent_selected"),
+            (e.CHANNEL_AUTOCOMPLETE_OPEN = "channel_autocomplete_open"),
+            (e.CHANNEL_AUTOCOMPLETE_SELECTED = "channel_autocomplete_selected"),
+            (e.AUTOMATED_MESSAGE_RECEIVED = "automated_message_received"),
+            (e.AUTOMATED_MESSAGE_DISMISSED = "automated_message_dismissed"),
+            (e.ACTIVITY_REPORT_PROBLEM = "activity_report_problem"),
+            (e.ROLE_PAGE_VIEWED = "role_page_viewed"),
+            (e.APPLICATION_COMMAND_BROWSER_OPENED =
+                "application_command_browser_opened"),
+            (e.APPLICATION_COMMAND_SELECTED = "application_command_selected"),
+            (e.APPLICATION_COMMAND_USED = "application_command_used"),
+            (e.CAPTCHA_SERVED = "captcha_served"),
+            (e.CHANNEL_PERMISSIONS_PAGE_VIEWED =
+                "channel_permissions_page_viewed"),
+            (e.DOMAIN_MIGRATED = "domain_migrated"),
+            (e.MESSAGE_EDIT_UP_ARROW = "message_edit_up_arrow"),
+            (e.APPLICATION_GENERATED_GENERIC_EVENT =
+                "application_generated_generic_event"),
+            (e.USER_FLOW_TRANSITION = "user_flow_transition"),
+            (e.ROLE_TEMPLATE_SELECTED = "role_template_selected"),
+            (e.USER_REPORT_SUBMITTED = "user_report_submitted");
+    }
+)(fn || (t.AnalyticEvents = fn = {}));
+
+// 2022
+!(function (e) {
+    e.APP_OPENED = "app_opened";
+    e.APP_CRASHED = "app_crashed";
+    e.APP_NATIVE_CRASH = "app_native_crash";
+    e.APP_UI_VIEWED = "app_ui_viewed";
+    e.APP_UI_VIEWED2 = "app_ui_viewed2";
+    e.APP_NETWORK_USAGE = "app_network_usage";
+    e.BACKGROUND_SYNC_COMPLETED = "background_sync_completed";
+    e.APP_LAUNCH_COMPLETED = "app_launch_completed";
+    e.APP_LANDING_VIEWED = "app_landing_viewed";
+    e.APP_MODULES_UPDATED = "app_modules_updated";
+    e.APP_FIRST_LAUNCHED = "app_first_launched";
+    e.APP_FIRST_LOGIN = "app_first_login";
+    e.REGISTER_VIEWED = "register_viewed";
+    e.REGISTER_TRANSITION = "register_transition";
+    e.LOGIN_VIEWED = "login_viewed";
+    e.READY_PAYLOAD_RECEIVED = "ready_payload_received";
+    e.CONNECTION_RESUMED = "connection_resumed";
+    e.FORCED_UPDATE_PASSWORD_SUCCEEDED = "force_update_password_succeeded";
+    e.EXTERNAL_FINGERPRINT_DROPPED = "external_fingerprint_dropped";
+    e.EXTERNAL_DYNAMIC_LINK_RECEIVED = "external_dynamic_link_received";
+    e.DEEP_LINK_CLICKED = "deep_link_clicked";
+    e.VOICE_CHANNEL_INVITE_SENT = "voice_channel_invite_sent";
+    e.INVITE_OPENED = "invite_opened";
+    e.INVITE_VIEWED = "invite_viewed";
+    e.INVITE_RESOLVED = "resolve_invite";
+    e.INVITE_APP_INVOKED = "invite_app_invoked";
+    e.INVITE_APP_OPENED = "invite_app_opened";
+    e.INVITE_LEARN_MORE = "invite_learn_more";
+    e.INVITE_LOGIN = "invite_login";
+    e.INVITE_LOGIN_SUCCESSFUL = "invite_login_successful";
+    e.INSTANT_INVITE_SHARED = "instant_invite_shared";
+    e.COPY_INSTANT_INVITE = "copy_instant_invite";
+    e.PERMANENT_INVITE_COMMUNITY_UPSELL_CLICKED =
+        "guild_permanent_links_community_upsell_clicked";
+    e.NATIVE_SHARE_SHEET_APP_CLICKED = "native_share_sheet_app_clicked";
+    e.CHANNEL_LINK_PREVIEW_JOINED = "channel_link_preview_joined";
+    e.CLIENT_HEARTBEAT = "client_heartbeat";
+    e.HEADLESS_TASK_INVOKED = "headless_task_invoked";
+    e.VERIFY_ACCOUNT_APP_OPENED = "verify_account_app_opened";
+    e.QUICKSWITCHER_OPENED = "quickswitcher_opened";
+    e.QUICKSWITCHER_CLOSED = "quickswitcher_closed";
+    e.QUICKSWITCHER_RESULT_SELECTED = "quickswitcher_result_selected";
+    e.ENABLE_NOTIFICATIONS = "enable_notifications";
+    e.NOTIFICATION_CLICKED = "notification_clicked";
+    e.NOTIFICATION_RENDERED = "notification_rendered";
+    e.NOTIFICATION_VIEWED = "notification_viewed";
+    e.NOTIFICATION_SETTINGS_UPDATED = "notification_settings_updated";
+    e.NOTIFICATION_PERMISSION_STATUS = "notification_permission_status";
+    e.NOTIFICATION_SETTINGS_CLICKED = "notification_settings_clicked";
+    e.NOTIFICATION_CENTER_ACTION = "notification_center_action";
+    e.NOTIFICATION_CENTER_LOADED = "notification_center_loaded";
+    e.NOTIFICATION_REPORT_SUBMITTED = "notification_report_submitted";
+    e.NOTIFICATION_PERMISSION_PREPROMPT_ACKED =
+        "notification_permission_preprompt_acked";
+    e.MOBILE_APP_DOWNLOAD_MODAL_ACKED = "mobile_app_download_modal_acked";
+    e.ACK_MESSAGES = "ack_messages";
+    e.MARK_AS_READ = "mark_as_read";
+    e.INBOX_CHANNEL_ACKED = "inbox_channel_acked";
+    e.INBOX_CHANNEL_CLICKED = "inbox_channel_clicked";
+    e.INBOX_CHANNEL_COLLAPSED = "inbox_channel_collapsed";
+    e.VOICE_CHANNEL_SELECTED = "voice_channel_selected";
+    e.JOIN_VOICE_CHANNEL = "join_voice_channel";
+    e.LEAVE_VOICE_CHANNEL = "leave_voice_channel";
+    e.VIEW_VOICE_CHANNEL = "view_voice_channel";
+    e.VOICE_BOTTOM_SHEET_EXPANDED = "voice_bottom_sheet_expanded";
+    e.VOICE_CONNECTION_CONNECTING = "voice_connection_connecting";
+    e.VOICE_CONNECTION_FAILURE = "voice_connection_failure";
+    e.VOICE_CONNECTION_SOCKET_FAILURE = "voice_connection_socket_failure";
+    e.VOICE_CONNECTION_SUCCESS = "voice_connection_success";
+    e.VOICE_CONNECTION_REMOTE_STREAMS_CREATED =
+        "voice_connection_remote_streams_created";
+    e.VOICE_DISCONNECT = "voice_disconnect";
+    e.START_SPEAKING = "start_speaking";
+    e.START_LISTENING = "start_listening";
+    e.VOICE_WATCHDOG_TIMEOUT = "voice_watchdog_timeout";
+    e.VOICE_PROCESSING = "voice_processing";
+    e.CALL_REPORT_PROBLEM = "call_report_problem";
+    e.NOISE_CANCELLATION_LINK_CLICKED = "noise_cancellation_link_clicked";
+    e.MEDIA_SESSION_JOINED = "media_session_joined";
+    e.VOICE_CHANNEL_TOPIC_SET = "voice_channel_topic_set";
+    e.VOICE_CHANNEL_TOPIC_VIEWED = "voice_channel_topic_viewed";
+    e.MEMBER_LIST_VIEWED = "member_list_viewed";
+    e.MEMBER_LIST_TOGGLED = "member_list_toggled";
+    e.DM_LIST_VIEWED = "dm_list_viewed";
+    e.DM_EMPTY_ACTION = "dm_empty_action";
+    e.DM_SAFETY = "dm_safety";
+    e.SUMMARIES_SIDEBAR_VIEWED = "summaries_sidebar_viewed";
+    e.SUMMARIES_SIDEBAR_TOGGLED = "summaries_sidebar_toggled";
+    e.SUMMARIES_TOPIC_CLICKED = "summaries_topic_clicked";
+    e.SUMMARIES_TOPICS_PILL_TOGGLED = "summaries_topics_pill_toggled";
+    e.SUMMARIES_TOPICS_PILL_VIEWED = "summaries_topics_pill_viewed";
+    e.SUMMARIES_REPORT_PROBLEM = "summaries_report_problem";
+    e.SUMMARIES_UNREAD_BAR_VIEWED = "summaries_unread_bar_viewed";
+    e.SETTINGS_PANE_VIEWED = "settings_pane_viewed";
+    e.PREVIEW_MARKDOWN_TOGGLED = "preview_markdown_toggled";
+    e.LEGACY_CHAT_INPUT_TOGGLED = "legacy_chat_input_toggled";
+    e.CHANNEL_NOTICE_VIEWED = "channel_notice_viewed";
+    e.CHANNEL_NOTICE_CLOSED = "channel_notice_closed";
+    e.CHANNEL_NOTICE_CTA_CLICKED = "channel_notice_cta_clicked";
+    e.MEMBER_LIST_NOTICE_VIEWED = "member_list_notice_viewed";
+    e.MEMBER_LIST_NOTICE_CLOSED = "member_list_notice_closed";
+    e.MEMBER_LIST_NOTICE_CTA_CLICKED = "member_list_notice_cta_clicked";
+    e.PREMIUM_PROMOTION_OPENED = "premium_promotion_opened";
+    e.PREMIUM_GUILD_PROMOTION_OPENED = "premium_guild_promotion_opened";
+    e.PREMIUM_GUILD_UPSELL_VIEWED = "premium_guild_upsell_viewed";
+    e.PREMIUM_GUILD_UPSELL_OPENED = "premium_guild_upsell_opened";
+    e.PREMIUM_GUILD_PENDING_MODAL = "premium_guild_pending_modal";
+    e.PERMISSIONS_REQUESTED = "permissions_requested";
+    e.PERMISSIONS_ACKED = "permissions_acked";
+    e.LOCAL_SETTINGS_UPDATED = "local_settings_updated";
+    e.APP_NOTICE_VIEWED = "app_notice_viewed";
+    e.APP_NOTICE_CLOSED = "app_notice_closed";
+    e.APP_NOTICE_PRIMARY_CTA_OPENED = "app_notice_primary_cta_opened";
+    e.VIDEO_LAYOUT_TOGGLED = "video_layout_toggled";
+    e.VIDEO_INPUT_TOGGLED = "video_input_toggled";
+    e.AUTHORIZED_APP_CONNECTED = "authorized_app_connected";
+    e.OPEN_MODAL = "open_modal";
+    e.OPEN_POPOUT = "open_popout";
+    e.MODAL_DISMISSED = "modal_dismissed";
+    e.MODAL_SECTION_VIEWED = "modal_section_viewed";
+    e.HOVER_MENU_OPENED = "hover_menu_opened";
+    e.CREATE_GUILD_VIEWED = "create_guild_viewed";
+    e.JOIN_GUILD_VIEWED = "join_guild_viewed";
+    e.GUILD_TEMPLATE_SELECTED = "guild_template_selected";
+    e.GAME_NEWS_CHANGED = "game_news_changed";
+    e.GAME_NEWS_OPENED = "game_news_opened";
+    e.APPLICATION_OPENED = "application_opened";
+    e.LAUNCH_GAME = "launch_game";
+    e.ACTIVITY_UPDATED = "activity_updated";
+    e.ACTIVITY_SESSION_JOINED = "activity_session_joined";
+    e.ACTIVITY_SESSION_LEFT = "activity_session_left";
+    e.ACTIVITY_VOICE_CONTROLS_TOGGLE_BUTTON_PRESSED =
+        "activity_voice_controls_toggle_button_pressed";
+    e.ACTIVITY_VOICE_CONTROLS_TOGGLE_MOVED =
+        "activity_voice_controls_toggle_moved";
+    e.ACTIVITY_WEB_VIEW_CONTENT_PROCESS_TERMINATED =
+        "activity_web_view_content_process_terminated";
+    e.ACTIVITY_VIDEO_PIP_SHOWN = "activity_video_pip_shown";
+    e.ACTIVITY_VIDEO_PIP_HIDDEN = "activity_video_pip_hidden";
+    e.ACTIVITY_DEVICE_THERMAL_STATE_CHANGED =
+        "activity_device_thermal_state_changed";
+    e.ACTIVITY_THERMAL_STATE_NOTICE_SHOWN =
+        "activity_thermal_state_notice_shown";
+    e.ACTIVITY_HANDSHAKE_TIMED_OUT = "activity_handshake_timed_out";
+    e.ACTIVITY_BOOKMARK_COPY_URL = "activity_bookmark_copy_url";
+    e.ACTIVITY_BOOKMARK_SHARED = "activity_bookmark_shared";
+    e.ACTIVITIES_PAGE_CELEBRATE_TILE_CLICKED =
+        "activities_page_celebrate_tile_clicked";
+    e.ACTIVITIES_PAGE_FEELING_LUCKY_CLICKED =
+        "activities_page_feeling_lucky_clicked";
+    e.ACTIVITY_SHARE_MOMENT_SEND = "activity_share_moment_send";
+    e.ACTIVITY_SHARE_MOMENT_COPY = "activity_share_moment_copy";
+    e.BROWSER_HANDOFF_SUCCEEDED = "browser_handoff_succeeded";
+    e.SHOW_TUTORIAL = "show_tutorial";
+    e.CLOSE_TUTORIAL = "close_tutorial";
+    e.DISMISS_ALL_TUTORIALS = "dismiss_all_tutorials";
+    e.ACTIVITY_CARD_CLICKED = "activity_card_clicked";
+    e.ACTIVITY_CARDS_VIEWED = "activity_cards_viewed";
+    e.INVITE_SENT = "invite_sent";
+    e.CONTACT_SELECTED = "contact_selected";
+    e.INSTANT_INVITE_OPTION_CLICKED = "instant_invite_option_clicked";
+    e.HOOK_RESULT = "hook_result";
+    e.OVERLAY_TOGGLED = "overlay_toggled";
+    e.OVERLAY_HOOK_RESULT = "overlay_hook_result";
+    e.OVERLAY_HOOK_CRASHED = "overlay_hook_crashed";
+    e.OVERLAY_INITIALIZED = "overlay_initialized";
+    e.OVERLAY_LOCKED = "overlay_locked";
+    e.OVERLAY_UNLOCKED = "overlay_unlocked";
+    e.OVERLAY_PIN_TOGGLED = "overlay_pin_toggled";
+    e.OVERLAY_LAYOUT_UPDATED = "overlay_layout_updated";
+    e.OVERLAY_SETTINGS_UPDATED = "overlay_settings_updated";
+    e.OVERLAY_PERF_INFO = "overlay_perf_info";
+    e.SPOTIFY_AUTO_PAUSED = "spotify_auto_paused";
+    e.SPOTIFY_BUTTON_CLICKED = "spotify_button_clicked";
+    e.SPOTIFY_LISTEN_ALONG_STARTED = "spotify_listen_along_started";
+    e.SPOTIFY_LISTEN_ALONG_ENDED = "spotify_listen_along_ended";
+    e.STREAMER_MODE_TOGGLE = "streamer_mode_toggle";
+    e.UPDATE_STREAMER_MODE_SETTINGS = "update_streamer_mode_settings";
+    e.INVITE_SUGGESTION_OPENED = "invite_suggestion_opened";
+    e.GUILD_VIEWED = "guild_viewed";
+    e.FRIENDS_LIST_VIEWED = "friends_list_viewed";
+    e.FRIEND_ADD_VIEWED = "friend_add_viewed";
+    e.FRIEND_ADD_NEARBY_CONNECTED = "friend_add_nearby_connected";
+    e.FRIEND_REQUEST_FAILED = "friend_request_failed";
+    e.CONNECTED_ACCOUNT_INITIATED = "connected_account_initiated";
+    e.FRIEND_SUGGESTIONS_TAB_VIEWED = "friend_suggestions_tab_viewed";
+    e.CONTACT_INVITE_IOS_SENT = "contact_invite_ios_sent";
+    e.CONTACT_INVITE_TAPPED = "contact_invite_tapped";
+    e.MESSAGE_REQUESTS_INITIALIZED = "message_requests_initialized";
+    e.GUILD_DEFAULT_MESSAGE_REQUEST_UPDATED =
+        "guild_default_message_request_updated";
+    e.SPAM_MESSAGE_REQUESTS_VIEWED = "spam_message_requests_viewed";
+    e.MESSAGE_REQUESTS_VIEWED = "message_requests_viewed";
+    e.MESSAGE_REQUEST_PREVIEW_VIEWED = "message_request_preview_viewed";
+    e.DOWNLOAD_APP = "download_app";
+    e.PAYMENT_FLOW_STARTED = "payment_flow_started";
+    e.PAYMENT_FLOW_COMPLETED = "payment_flow_completed";
+    e.PAYMENT_FLOW_STEP = "payment_flow_step";
+    e.PAYMENT_FLOW_SUCCEEDED = "payment_flow_succeeded";
+    e.PAYMENT_FLOW_FAILED = "payment_flow_failed";
+    e.PAYMENT_FLOW_CANCELED = "payment_flow_canceled";
+    e.PAYMENT_FLOW_LOADED = "payment_flow_loaded";
+    e.PAYMENT_SOURCE_CREATION_FAILED = "payment_source_creation_failed";
+    e.PREMIUM_UPGRADE_STARTED = "premium_upgrade_started";
+    e.CHANNEL_MEMBER_KICKED = "channel_member_kicked";
+    e.CHANNEL_OPENED = "channel_opened";
+    e.NUO_TRANSITION = "nuo_transition";
+    e.NUO_GUILD_DATA = "nuo_guild_info";
+    e.SOUNDSHARE_ATTACHED = "soundshare_attached";
+    e.SOUNDSHARE_FAILED = "soundshare_failed";
+    e.SOUNDSHARE_TRANSMITTING = "soundshare_transmitting";
+    e.SOUNDSHARE_ENABLE = "soundshare_enable";
+    e.VIDEOHOOK_INITIALIZED = "videohook_initialized";
+    e.SCREENSHARE_FINISHED = "screenshare_finished";
+    e.SCREENSHARE_FAILED = "screenshare_failed";
+    e.VIDEO_STREAM_ENDED = "video_stream_ended";
+    e.VIDEO_STREAM_STARTED = "video_stream_started";
+    e.STREAM_WARNING_TRIGGERED = "stream_warning_triggered";
+    e.STREAM_REPORT_PROBLEM = "stream_report_problem";
+    e.STREAM_SETTINGS_UPDATE = "stream_settings_update";
+    e.VIDEO_INPUT_INITIALIZED = "video_input_initialized";
+    e.NOTIFY_STREAM_SETTING_UPDATE = "notify_stream_setting_update";
+    e.VIDEO_SPINNER_SHOWN_V2 = "video_spinner_shown_v2";
+    e.VIDEO_TOGGLED = "video_toggled";
+    e.VIDEO_EFFECT_UPDATED = "video_effect_updated";
+    e.VIDEO_BACKGROUND_FEEDBACK = "video_background_feedback";
+    e.VIDEO_BACKGROUND_ADDED = "video_background_added";
+    e.VIDEO_BACKGROUND_DELETED = "video_background_deleted";
+    e.AUDIO_LOCAL_SOUNDBOARD_MUTE_TOGGLED =
+        "audio_local_soundboard_mute_toggled";
+    e.CHANGE_LOG_OPENED = "change_log_opened";
+    e.CHANGE_LOG_CLOSED = "change_log_closed";
+    e.CHANGE_LOG_VIDEO_INTERACTED = "change_log_video_interacted";
+    e.CHANGE_LOG_CTA_CLICKED = "change_log_cta_clicked";
+    e.CHANGE_LOG_VIDEO_PLAYED = "change_log_video_played";
+    e.CHANGE_LOG_VIDEO_UNMUTE = "change_log_video_unmute";
+    e.ACCOUNT_LINK_STEP = "account_link_step";
+    e.ACCOUNT_LINK_FAILED = "account_link_failed";
+    e.DEVICE_LINK_STEP = "device_link_step";
+    e.CONNECTED_ACCOUNT_VIEWED = "connected_account_viewed";
+    e.SERVER_DRAWER_OPENED = "server_drawer_opened";
+    e.MESSAGE_COMPOSER_OPENED = "message_composer_opened";
+    e.LAUNCHPAD_SEARCHED = "launchpad_searched";
+    e.LAUNCHPAD_OPENED = "launchpad_opened";
+    e.MEDIA_DEVICE_CHANGED = "media_device_changed";
+    e.IMAGE_VIDEO_DATA_SETTINGS_UPDATED = "image_video_data_settings_updated";
+    e.USER_SETTINGS_KEYBIND_UPDATED = "user_settings_keybind_updated";
+    e.USER_ATTRIBUTION_RECEIVED = "user_attribution_received";
+    e.USER_AVATAR_UPDATED = "user_avatar_updated";
+    e.USER_FINGERPRINT_CHANGED = "user_fingerprint_changed";
+    e.DISPATCH_PATCH_STARTED = "gl_patch_started";
+    e.DISPATCH_PATCH_PAUSED = "gl_patch_paused";
+    e.DISPATCH_PATCH_FAILED = "gl_patch_failed";
+    e.DISPATCH_PATCH_VERIFICATION_FAILED = "gl_verification_failed";
+    e.DISPATCH_PATCH_COMPLETE = "gl_patch_complete";
+    e.DISPATCH_PATCH_CANCELLED = "gl_patch_cancelled";
+    e.DISPATCH_APPLICATION_UNINSTALLED = "gl_application_uninstalled";
+    e.PREMIUM_MARKETING_PAGE_VIEWED = "premium_marketing_page_viewed";
+    e.PREMIUM_MARKETING_PAGE_EXITED = "premium_marketing_page_exited";
+    e.STORE_DIRECTORY_VIEWED = "store_directory_viewed";
+    e.STORE_DIRECTORY_BROWSE_VIEWED = "store_directory_browse_viewed";
+    e.STORE_DIRECTORY_FILTER_UPDATED = "store_directory_filter_updated";
+    e.STORE_DIRECTORY_EXITED = "store_directory_exited";
+    e.STORE_DIRECTORY_HERO_VIEWED = "store_directory_hero_viewed";
+    e.STORE_LISTING_VIEWED = "store_listing_viewed";
+    e.STORE_LISTING_EXITED = "store_listing_exited";
+    e.STORE_LISTING_MEDIA_SCROLLED = "store_listing_media_scrolled";
+    e.LIBRARY_VIEWED = "library_viewed";
+    e.LIBRARY_INSTALL_INITIATED = "library_install_initiated";
+    e.LIBRARY_REPAIR_INITIATED = "library_repair_initiated";
+    e.LIBRARY_UNINSTALL_INITIATED = "library_uninstall_initiated";
+    e.LIBRARY_SCANNING_ENABLED = "library_scanning_enabled";
+    e.PROMOTION_VIEWED = "promotion_viewed";
+    e.APPLICATION_SETTINGS_UPDATED = "application_settings_updated";
+    e.NETWORKING_SYSTEM_METRICS = "networking_system_metrics";
+    e.NETWORKING_PEER_METRICS = "networking_peer_metrics";
+    e.MIC_TESTING_STARTED = "mic_testing_started";
+    e.MIC_TESTING_STOPPED = "mic_testing_stopped";
+    e.GIFT_CODE_SENT = "gift_code_sent";
+    e.GIFT_CODE_RESOLVED = "gift_code_resolved";
+    e.GIFT_CODE_COPIED = "gift_code_copied";
+    e.SLASH_COMMAND_USED = "slash_command_used";
+    e.KEYBOARD_SHORTCUT_USED = "keyboard_shortcut_used";
+    e.KEYBOARD_MODE_TOGGLED = "keyboard_mode_toggled";
+    e.SEARCH_RESULT_VIEWED = "search_result_viewed";
+    e.SEARCH_RESULT_SELECTED = "search_result_selected";
+    e.SEARCH_RESULT_EXPANDED = "search_result_expanded";
+    e.SEARCH_RESULT_SORT_CHANGED = "search_result_sort_changed";
+    e.SEARCH_RESULT_EMPTY = "search_result_empty";
+    e.SEARCH_OPENED = "search_opened";
+    e.SEARCH_STARTED = "search_started";
+    e.SEARCH_CLOSED = "search_closed";
+    e.UPSELL_VIEWED = "upsell_viewed";
+    e.UPSELL_CLICKED = "upsell_clicked";
+    e.PREMIUM_UPSELL_VIEWED = "premium_upsell_viewed";
+    e.PREMIUM_EDUCATION_VIEWED = "premium_education_viewed";
+    e.DISMISSIBLE_CONTENT_SHOWN = "dismissible_content_shown";
+    e.DISMISSIBLE_CONTENT_DISMISSED = "dismissible_content_dismissed";
+    e.DISMISSIBLE_CONTENT_REJECTED = "dismissible_content_rejected";
+    e.PREMIUM_CHANGELOG_CTA_CLICKED = "premium_changelog_cta_clicked";
+    e.JUMP = "jump";
+    e.GIF_FAVORITED = "gif_favorited";
+    e.GIF_UNFAVORITED = "gif_unfavorited";
+    e.GUILD_DISCOVERY_VIEWED = "guild_discovery_viewed";
+    e.GUILD_DISCOVERY_GUILD_SELECTED = "guild_discovery_guild_selected";
+    e.GUILD_DISCOVERY_GUILD_JOIN_CLICKED = "guild_discovery_guild_join_clicked";
+    e.GUILD_DISCOVERY_EXITED = "guild_discovery_exited";
+    e.NEWS_EDITOR_VIEWED = "news_card_editor_viewed";
+    e.NEWS_UPDATED = "news_card_updated";
+    e.NEWS_LINK_COPIED = "news_link_copied";
+    e.NEWS_LINK_SHARED = "news_link_shared";
+    e.USER_STATUS_UPDATED = "user_status_updated";
+    e.CUSTOM_STATUS_UPDATED = "custom_status_updated";
+    e.TEXT_COPIED = "text_copied";
+    e.TEXT_SHARED = "text_shared";
+    e.NAV_DRAWER_OPENED = "nav_drawer_opened";
+    e.EXPERIMENT_USER_TRIGGERED = "experiment_user_triggered";
+    e.EXPERIMENT_GUILD_TRIGGERED = "experiment_guild_triggered";
+    e.EXPERIMENT_DM_TRIGGERED = "experiment_dm_triggered";
+    e.EXPERIMENT_CUSTOM_EVENT = "experiment_custom_event";
+    e.GUILD_INSIGHTS_SETTINGS_CTA_CLICKED =
+        "guild_insights_settings_cta_clicked";
+    e.GUILD_SETTINGS_DISCOVERY_VIEWED = "guild_settings_discovery_viewed";
+    e.GUILD_SETTINGS_DISCOVERY_UPDATED = "guild_settings_discovery_updated";
+    e.MOD_DASH_SEARCH_MEMBERS = "mod_dash_search_members";
+    e.MOD_DASH_FILTER_ROLES = "mod_dash_filter_roles";
+    e.MOD_DASH_FILTER_SAFETY_FLAGS = "mod_dash_filter_safety_flags";
+    e.OAUTH2_AUTHORIZE_VIEWED = "oauth2_authorize_viewed";
+    e.OAUTH2_AUTHORIZE_SUCCESS_VIEWED = "oauth2_authorize_success_viewed";
+    e.OAUTH2_AUTHORIZE_SUCCESS_GO_TO_GUILD_CLICKED =
+        "oauth2_authorize_success_go_to_guild_clicked";
+    e.OAUTH2_AUTHORIZE_SUCCESS_CLOSE_CLICKED =
+        "oauth2_authorize_success_close_clicked";
+    e.GUILD_OUTAGE_VIEWED = "guild_outage_viewed";
+    e.CONTACT_SYNC_FLOW_KEY = "relationship_sync_flow";
+    e.LOGIN_SUCCESSFUL = "login_successful";
+    e.REPLY_STARTED = "reply_started";
+    e.GUILD_TEMPLATE_APP_OPENED = "guild_template_app_opened";
+    e.GUILD_TEMPLATE_OPENED = "guild_template_opened";
+    e.GUILD_TEMPLATE_RESOLVED = "guild_template_resolved";
+    e.GUILD_TEMPLATE_LINK_SENT = "guild_template_link_sent";
+    e.ACTIVITY_FEED_CUSTOMIZATION_OPENED = "af_customization_opened";
+    e.ACTIVITY_FEED_CUSTOMIZATION_SAVED = "af_customization_saved";
+    e.ACTIVITY_FEED_VOICE_CHANNEL_VISITED = "af_voice_channel_visited";
+    e.ACTIVITY_FEED_GUILD_VISITED = "af_guild_visited";
+    e.ACTIVITY_FEED_DM_VISITED = "af_dm_visited";
+    e.AGE_GATE_SUBMITTED = "age_gate_submitted";
+    e.AGE_GATE_ACTION = "age_gate_action";
+    e.GUILD_WELCOME_SCREEN_SETTINGS_UPDATED =
+        "guild_welcome_screen_settings_updated";
+    e.GUILD_WELCOME_SCREEN_OPTION_SELECTED =
+        "guild_welcome_screen_option_selected";
+    e.MESSAGE_REPORTED = "message_reported";
+    e.EXPRESSION_PICKER_TAB_CLICKED = "expression_picker_tab_clicked";
+    e.EXPRESSION_PICKER_OPENED = "expression_picker_opened";
+    e.EXPRESSION_PICKER_CATEGORY_SELECTED =
+        "expression_picker_category_selected";
+    e.EXPRESSION_PICKER_CATEGORY_COLLAPSE_TOGGLED =
+        "expression_picker_category_collapse_toggled";
+    e.EXPRESSION_PICKER_STICKER_SHOP_VIEWED =
+        "expression_picker_sticker_shop_viewed";
+    e.EXPRESSION_PICKER_EXPRESSION_FOCUS = "expression_picker_expression_focus";
+    e.EXPRESSION_PICKER_EXPRESSION_SELECTED =
+        "expression_picker_expression_selected";
+    e.EXPRESSION_FAVORITED = "expression_favorited";
+    e.REACTION_PICKER_OPENED = "reaction_picker_opened";
+    e.REACTION_PICKER_TAB_CLICKED = "reaction_picker_tab_clicked";
+    e.SUPER_REACTION_BALANCE_VIEWED = "super_reaction_balance_viewed";
+    e.SUPER_REACTION_NOTIFICATIONS_ENABLED =
+        "super_reaction_notifications_enabled";
+    e.STICKER_PACK_VIEW_ALL = "sticker_pack_view_all";
+    e.STICKER_SEARCH_VIEW_ALL = "sticker_search_view_all";
+    e.STICKER_SUGGESTIONS_ENABLED_TOGGLED =
+        "sticker_suggestions_enabled_toggled";
+    e.STICKERS_IN_AUTOCOMPLETE_TOGGLED = "stickers_in_autocomplete_toggled";
+    e.AUTO_SUGGEST_DISPLAYED = "auto_suggest_displayed";
+    e.AUTO_SUGGEST_EXPRESSION_SELECTED = "auto_suggest_expression_selected";
+    e.NUDGE_DISPLAYED = "nudge_displayed";
+    e.NUDGE_OPENED = "nudge_opened";
+    e.STICKER_ATTACHED = "sticker_attached";
+    e.EXPRESSION_TOOLTIP_VIEWED = "expression_tooltip_viewed";
+    e.CHAT_INPUT_COMPONENT_VIEWED = "chat_input_component_viewed";
+    e.TEXT_AREA_CTA_CLICKED = "text_area_cta_clicked";
+    e.CHAT_INPUT_ACTIVITY_BUTTON_CLICKED = "chat_input_activity_button_clicked";
+    e.IN_APP_CAMERA_USED = "in_app_camera_used";
+    e.MEDIA_PICKER_ACTION_SHEET_ENGAGED = "media_picker_action_sheet_engaged";
+    e.GUILD_MEMBERSHIP_GATE_SETTINGS_UPDATED =
+        "guild_membership_gate_settings_updated";
+    e.REQUEST_TO_SPEAK_INITIATED = "request_to_speak_initiated";
+    e.PROMOTED_TO_SPEAKER = "promoted_to_speaker";
+    e.START_STAGE_OPENED = "start_stage_opened";
+    e.MKTG_APPLICATION_STEP = "mktg_application_step";
+    e.SERVER_SETUP_CTA_CLICKED = "server_setup_cta_clicked";
+    e.HELP_CLICKED = "help_clicked";
+    e.EMOJI_UPSELL_POPOUT_MORE_EMOJIS_OPENED =
+        "emoji_upsell_popout_more_emojis_opened";
+    e.FILE_UPLOAD_ALERT_VIEWED = "file_upload_alert_viewed";
+    e.FAILED_MESSAGE_RESOLVED = "failed_message_resolved";
+    e.VIEW_AS_ROLES_SELECTED = "view_as_roles_selected";
+    e.GUILD_CREATION_INTENT_SELECTED = "guild_creation_intent_selected";
+    e.MOBILE_REDESIGN_TOGGLED = "mobile_redesign_toggled";
+    e.MOBILE_REDESIGN_FEEDBACK = "mobile_redesign_feedback";
+    e.GUILDS_DOCK_TAB_SELECTED = "guilds_dock_tab_selected";
+    e.GUILDS_DOCK_OPENED = "guilds_dock_opened";
+    e.GUILDS_DOCK_ITEM_CLICKED = "guilds_dock_item_clicked";
+    e.GUILDS_DOCK_TAB_SCROLL_STARTED = "guilds_dock_tab_scroll_started";
+    e.GUILDS_DOCK_RECENTLY_ACTIVE_GUILDS_VIEWED =
+        "guilds_dock_recently_active_guilds_viewed";
+    e.GUILDS_DOCK_ALL_SERVERS_VIEWED = "guilds_dock_all_servers_viewed";
+    e.CHANNEL_AUTOCOMPLETE_OPEN = "channel_autocomplete_open";
+    e.CHANNEL_AUTOCOMPLETE_SELECTED = "channel_autocomplete_selected";
+    e.AUTOMATED_MESSAGE_RECEIVED = "automated_message_received";
+    e.AUTOMATED_MESSAGE_DISMISSED = "automated_message_dismissed";
+    e.ACTIVITY_REPORT_PROBLEM = "activity_report_problem";
+    e.ACTIVITY_REPORT_DONT_SHOW = "activity_report_dont_show";
+    e.ACTIVITY_ENABLE_HARDWARE_ACCELERATION =
+        "activity_enable_hardware_acceleration";
+    e.ACTIVITIES_CENTER_CONTROL_TRAY_BUTTON_HOVERED =
+        "activities_center_control_tray_button_hovered";
+    e.ACTIVITIES_MINI_SHELF_HOVERED = "activities_mini_shelf_hovered";
+    e.ACTIVITIES_WHATS_NEW_OPENED = "activities_whats_new_opened";
+    e.ACTIVITIES_WHATS_NEW_CLICKED = "activities_whats_new_clicked";
+    e.ROLE_PAGE_VIEWED = "role_page_viewed";
+    e.DROPS_ACTIVITY_PANEL_BUTTON_CLICK = "drops_activity_panel_button_click";
+    e.DROPS_ACTIVITY_PANEL_POPOVER_CTA_CLICK =
+        "drops_activity_panel_popover_cta_click";
+    e.APPLICATION_COMMAND_BROWSER_OPENED = "application_command_browser_opened";
+    e.APPLICATION_COMMAND_BROWSER_SCROLLED =
+        "application_command_browser_scrolled";
+    e.APPLICATION_COMMAND_BROWSER_JUMPED = "application_command_browser_jumped";
+    e.APPLICATION_COMMAND_BROWSER_SEARCH_RESULT_VIEWED =
+        "application_command_browser_search_result_viewed";
+    e.APPLICATION_COMMAND_SELECTED = "application_command_selected";
+    e.APPLICATION_COMMAND_USED = "application_command_used";
+    e.APPLICATION_COMMAND_VALIDATION_FAILED =
+        "application_command_validation_failed";
+    e.APPLICATION_COMMAND_LOAD_TIMING = "application_command_load_timing";
+    e.APPLICATION_COMMAND_SEARCH_OPEN_TIMING =
+        "application_command_search_open_timing";
+    e.APPLICATION_ADD_TO_SERVER_CLICKED = "application_add_to_server_clicked";
+    e.PREMIUM_APPLICATION_SUBSCRIPTION_MANAGE_CTA_CLICKED =
+        "premium_application_subscription_manage_cta_clicked";
+    e.COMMANDS_MIGRATION_TOOLTIP_DISMISSED =
+        "commands_migration_tooltip_dismissed";
+    e.COMMANDS_MIGRATION_TOOLTIP_VIEWED = "commands_migration_tooltip_viewed";
+    e.POPULAR_APPLICATION_COMMAND_CLICKED =
+        "popular_application_command_clicked";
+    e.APP_MANAGE_CTA_CLICKED = "app_manage_cta_clicked";
+    e.CAPTCHA_SERVED = "captcha_served";
+    e.CAPTCHA_EVENT = "captcha_event";
+    e.CHANNEL_PERMISSIONS_PAGE_VIEWED = "channel_permissions_page_viewed";
+    e.DOMAIN_MIGRATED = "domain_migrated";
+    e.MESSAGE_EDIT_UP_ARROW = "message_edit_up_arrow";
+    e.APPLICATION_GENERATED_GENERIC_EVENT =
+        "application_generated_generic_event";
+    e.USER_FLOW_TRANSITION = "user_flow_transition";
+    e.ROLE_TEMPLATE_SELECTED = "role_template_selected";
+    e.USER_REPORT_SUBMITTED = "user_report_submitted";
+    e.CAPTCHA_FAILED = "captcha_failed";
+    e.MEMBER_LIST_ADD_MEMBERS_CLICKED = "member_list_add_members_clicked";
+    e.CONTACT_SYNC_TOGGLED = "contact_sync_toggled";
+    e.NAME_SUBMITTED = "name_submitted";
+    e.USER_DISCOVERY_UPDATED = "user_discovery_updated";
+    e.SOUNDPACK_UPDATED = "soundpack_updated";
+    e.NOTIFICATION_CTA_CLICKED = "notification_cta_clicked";
+    e.MESSAGE_LENGTH_LIMIT_REACHED = "message_length_limit_reached";
+    e.YOU_TAB_AVATAR_PRESS = "you_tab_avatar_press";
+    e.YOU_TAB_SETTINGS_ICON_PRESS = "you_tab_settings_icon_press";
+    e.YOU_TAB_NITRO_ICON_PRESS = "you_tab_nitro_icon_press";
+    e.YOU_TAB_CUSTOM_STATUS_PRESS = "you_tab_custom_status_press";
+    e.YOU_TAB_EDIT_PROFILE_PRESS = "you_tab_edit_profile_press";
+    e.USER_SETTINGS_SEARCH_PRESS = "user_settings_search_press";
+    e.USER_SETTINGS_SEARCH_RESULT_PRESS = "user_settings_search_result_press";
+    e.THREAD_BROWSER_TAB_CHANGED = "thread_browser_tab_changed";
+    e.THREAD_NOTIFICATION_SETTINGS_UPDATED =
+        "thread_notification_settings_updated";
+    e.THREAD_CREATION_STARTED = "thread_creation_started";
+    e.THREAD_NUDGE_SHOWN = "thread_nudge_shown";
+    e.FORUM_CHANNEL_POSTS_SORTED = "forum_channel_posts_sorted";
+    e.FORUM_CHANNEL_LAYOUT_UPDATED = "forum_channel_layout_updated";
+    e.FORUM_POST_LINK_COPIED = "forum_post_link_copied";
+    e.FORUM_CHANNEL_ONBOARDING_CLICKED = "forum_channel_onboarding_clicked";
+    e.FORUM_CHANNEL_ENABLE_AUTOMOD_CLICKED =
+        "forum_channel_enable_automod_clicked";
+    e.FORUM_UPSELL_MODAL_CLICKED = "forum_upsell_modal_clicked";
+    e.FORUM_ADD_MEDIA_TO_ORIGINAL_POST_CLICKED =
+        "forum_add_media_to_original_post_clicked";
+    e.FORUM_CHANNEL_HELPER_CARD_CLICKED = "forum_channel_helper_card_clicked";
+    e.FORUM_CHANNEL_MEDIA_UPLOADER_CLICKED =
+        "forum_channel_media_uploader_clicked";
+    e.FORUM_CHANNEL_SEARCHED = "forum_channel_searched";
+    e.FORUM_CHANNEL_SEARCH_CLEARED = "forum_channel_search_cleared";
+    e.FORUM_CHANNEL_CREATE_NEW_POST_CLICKED =
+        "forum_channel_create_new_post_clicked";
+    e.FORUM_CHANNEL_CREATE_NEW_POST_KEYBIND_USED =
+        "forum_channel_create_new_post_keybind_used";
+    e.FORUM_CHANNEL_NEW_POST_DRAFT_CREATED =
+        "forum_channel_new_post_draft_created";
+    e.FORUM_CHANNEL_NEW_POST_DRAFT_CLEARED =
+        "forum_channel_new_post_draft_cleared";
+    e.FORUM_CHANNEL_TAG_FILTER_CLICKED = "forum_channel_tag_filter_clicked";
+    e.FORUM_CHANNEL_POST_CREATED = "forum_channel_post_created";
+    e.FORUM_CHANNEL_SCROLLED = "forum_channel_scrolled";
+    e.FORUM_CHANNEL_MORE_POSTS_LOADED = "forum_channel_more_posts_loaded";
+    e.FORUM_CHANNEL_POST_CLICKED = "forum_channel_post_clicked";
+    e.FORUM_CHANNEL_SEEN_BATCH = "forum_channel_seen_batch";
+    e.FORUM_CHANNEL_GRID_UPSELL_VIEWED = "forum_channel_grid_upsell_viewed";
+    e.MEDIA_CHANNEL_UPSELL_CLICKED = "media_channel_upsell_clicked";
+    e.MEDIA_POST_PREVIEW_EMBED_CLICKED = "media_post_preview_embed_clicked";
+    e.MEDIA_POST_SHARE_PROMPT_CLICKED = "media_post_share_prompt_clicked";
+    e.GUILD_SCHEDULED_EVENT_VIEWED = "guild_scheduled_event_viewed";
+    e.GUILD_SCHEDULED_EVENT_PURCHASE_INITIATED =
+        "guild_scheduled_event_purchase_initiated";
+    e.GUILD_SCHEDULED_EVENT_LINK_COPIED = "guild_scheduled_event_link_copied";
+    e.DISCOVERY_SETUP_POPULAR_TAG_CLICKED =
+        "discovery_setup_popular_tag_clicked";
+    e.DISCOVERY_SETUP_CTA_CLICKED = "discovery_setup_cta_clicked";
+    e.TOOLTIP_VIEWED = "tooltip_viewed";
+    e.WELCOME_CTA_CLICKED = "welcome_cta_clicked";
+    e.OUTBOUND_PROMOTION_NOTICE_CLICKED = "outbound_promotion_notice_clicked";
+    e.USER_AGE_SUBMITTED = "user_age_submitted";
+    e.GUILD_DIRECTORY_CHANNEL_VIEWED = "guild_directory_channel_viewed";
+    e.GUILD_DIRECTORY_SEARCH = "guild_directory_search";
+    e.HUB_ONBOARDING_CAROUSEL_SCROLLED = "hub_onboarding_carousel_scrolled";
+    e.HUB_STUDENT_PROMPT_CLICKED = "hub_student_prompt_clicked";
+    e.ADD_FRIEND_OTHER_PLACES_HUB_CLICKED =
+        "add_friend_other_places_hub_clicked";
+    e.ADD_FRIEND_OTHER_PLACES_DISCOVERY_CLICKED =
+        "add_friend_other_places_discovery_clicked";
+    e.MESSAGE_DELETED_BY_ADMIN = "message_deleted_by_admin";
+    e.ATTACHMENT_REPORTED_TO_NCMEC = "attachment_reported_to_ncmec";
+    e.SURVEY_SUBMITTED = "survey_submitted";
+    e.CANCELLATION_FLOW_STARTED = "cancellation_flow_started";
+    e.CANCELLATION_FLOW_STEP = "cancellation_flow_step";
+    e.MESSAGE_SENT_WITH_ATTACHMENTS = "message_sent_with_attachments";
+    e.MESSAGE_LINK_COPIED = "message_link_copied";
+    e.SHARE_MESSAGE_SENT = "share_message_sent";
+    e.MESSAGE_POPOUT_MENU_OPENED_MOBILE = "message_popout_menu_opened_mobile";
+    e.MESSAGE_POPOUT_MENU_OPENED_DESKTOP = "message_popout_menu_opened_desktop";
+    e.VOICE_CODEC_DETECTED = "voice_codec_detected";
+    e.VOICE_SETTINGS_CHANGED = "voice_settings_changed";
+    e.CLIP_SAVED = "clip_saved";
+    e.STANDALONE_BILLING_FLOW_STARTED = "standalone_billing_flow_started";
+    e.STANDALONE_MANAGE_SUBSCRIPTION_PAGE_VIEWED =
+        "standalone_manage_subscription_page_viewed";
+    e.INBOUND_PROMOTION_VIEWED = "inbound_promotion_viewed";
+    e.INBOUND_PROMOTION_ELIGIBILITY_CHECKED =
+        "inbound_promotion_eligibility_checked";
+    e.CONTEXT_MENU_IMAGE_COPIED = "context_menu_image_copied";
+    e.CONTEXT_MENU_IMAGE_SAVED = "context_menu_image_saved";
+    e.CONTEXT_MENU_LINK_COPIED = "context_menu_link_copied";
+    e.CONTEXT_MENU_LINK_OPENED = "context_menu_link_opened";
+    e.CONTEXT_MENU_IMAGE_COPY_FAILED = "context_menu_image_copy_failed";
+    e.CONTEXT_MENU_IMAGE_SAVE_FAILED = "context_menu_image_save_failed";
+    e.CONTEXT_MENU_MEDIA_LINK_COPIED = "context_menu_media_link_copied";
+    e.MEDIA_DOWNLOAD_BUTTON_TAPPED = "media_download_button_tapped";
+    e.MEDIA_VIEWER_SESSION_COMPLETED = "media_viewer_session_completed";
+    e.MEDIA_VIEWER_SHARE_BUTTON_TAPPED = "media_viewer_share_button_tapped";
+    e.MEDIA_VIEWER_DOWNLOAD_BUTTON_TAPPED =
+        "media_viewer_download_button_tapped";
+    e.FILE_SIZE_LIMIT_EXCEEDED = "file_size_limit_exceeded";
+    e.MOBILE_FILE_PICKER_ERROR = "mobile_file_picker_error";
+    e.PREMIUM_UNCANCEL_WINBACK_CTA_CLICKED =
+        "premium_uncancel_winback_cta_clicked";
+    e.EASTER_EGG_INTERACTED = "easter_egg_interacted";
+    e.RPC_COMMAND_SENT = "rpc_command_sent";
+    e.RPC_SERVER_ERROR_CAUGHT = "rpc_server_error_caught";
+    e.RPC_SUBSCRIPTION_REQUESTED = "rpc_subscription_requested";
+    e.GUILD_DEFAULT_DMS_UPDATED = "guild_default_dms_updated";
+    e.SLASH_COMMAND_SUGGESTIONS_TOGGLED = "slash_command_suggestions_toggled";
+    e.LINK_SECURITY_CHECK_BLOCKED = "link_security_check_blocked";
+    e.A11Y_RUNTIME_VIOLATION = "a11y_runtime_violation";
+    e.ROLE_SUBSCRIPTION_LISTING_UPSELL_PAGE_VIEWED =
+        "role_subscription_listing_upsell_page_viewed_v3";
+    e.ROLE_SUBSCRIPTION_PURCHASE_SYSTEM_MESSAGE_CTA_CLICKED =
+        "role_subscription_purchase_system_message_cta_clicked";
+    e.ROLE_SUBSCRIPTION_PURCHASE_SYSTEM_MESSAGE_CLICKED =
+        "role_subscription_purchase_system_message_clicked";
+    e.ROLE_SUBSCRIPTION_LISTING_CREATED =
+        "role_subscription_listing_created_v2";
+    e.ROLE_SUBSCRIPTION_LISTING_TEMPLATE_SELECTOR_EXITED =
+        "role_subscription_listing_template_selector_exited";
+    e.MULTI_ACCOUNT_ACCOUNT_REMOVE = "multi_account_account_remove";
+    e.MULTI_ACCOUNT_SWITCH_ATTEMPT = "multi_account_switch_attempt";
+    e.MULTI_ACCOUNT_SWITCH_SUCCESS = "multi_account_switch_success";
+    e.MULTI_ACCOUNT_SWITCH_FAILURE = "multi_account_switch_failure";
+    e.CHANGE_LANGUAGE_MODAL_SHOWN = "change_language_modal_shown";
+    e.CHANGE_LANGUAGE_MODAL_YES_CLICKED = "change_language_modal_yes_clicked";
+    e.CHANGE_LANGUAGE_MODAL_NO_CLICKED = "change_language_modal_no_clicked";
+    e.UPLOAD_DRAG_AND_DROP_COUNT = "upload_drag_and_drop_count";
+    e.UPLOAD_FILE_LIMIT_ERROR = "upload_file_limit_error";
+    e.UPDATE_USER_SETTINGS_LOCAL = "update_user_settings_local";
+    e.UPDATE_SOUNDBOARD_SETTINGS = "update_soundboard_settings";
+    e.CHANNEL_INFORMATION_OPENED = "channel_information_opened";
+    e.CHANNEL_INFORMATION_TAB_CLICKED = "channel_information_tab_clicked";
+    e.PREMIUM_GIFT_UPSELL_VIEWED = "premium_gift_upsell_viewed";
+    e.ONBOARDING_VALUE_PROPS_VIEWED = "onboarding_value_props_viewed";
+    e.GUILD_JOIN_FEEDBACK = "guild_join_feedback";
+    e.FEED_LOADED = "feed_loaded";
+    e.FEED_ITEM_INTERACTED = "feed_item_interacted";
+    e.FEED_ITEM_SEEN_BATCH = "feed_item_seen_batch";
+    e.FEED_SHOWN = "feed_shown";
+    e.ACTIVE_CHANNEL_CLICKED = "active_channel_clicked";
+    e.ACTIVE_CHANNELS_LOADED = "active_channels_loaded";
+    e.HOME_OPENED = "home_opened";
+    e.HOME_BACKGROUNDED = "home_backgrounded";
+    e.HOME_EXITED = "home_exited";
+    e.HOME_EVENT_CLICKED = "home_event_clicked";
+    e.HOME_EVENTS_LOADED = "home_events_loaded";
+    e.HOME_REPORT_PROBLEM = "home_report_problem";
+    e.HOME_FEEDBACK_PROMPT_VIEWED = "home_feedback_prompt_viewed";
+    e.HOME_FEEDBACK_SUBMITTED = "home_feedback_submitted";
+    e.HOME_FIRST_SCROLL_STARTED = "home_first_scroll_started";
+    e.HOME_PANEL_VIEWED = "home_panel_viewed";
+    e.MOBILE_WEB_HANDOFF_FAILURE = "mobile_web_handoff_failure";
+    e.PREMIUM_UNCANCEL_WINBACK_MODAL_VIEWED =
+        "premium_uncancel_winback_modal_viewed";
+    e.STARTER_CHANNELS_CTA_CLICKED = "starter_channels_cta_clicked";
+    e.STARTER_CHANNEL_ROW_SELECTED = "starter_channel_row_selected";
+    e.PREMIUM_FEATURE_USAGE = "premium_feature_usage_v2";
+    e.PREMIUM_FEATURE_TRY_OUT = "premium_feature_try_out";
+    e.TEXT_IN_VOICE_OPENED = "text_in_voice_opened";
+    e.GUILD_AUTOMOD_FEEDBACK = "guild_automod_feedback";
+    e.GUILD_RAID_REPORTED = "guild_raid_reported";
+    e.GUILD_RAID_FEEDBACK = "guild_raid_feedback";
+    e.GUILD_RAID_ALERTS_SETUP = "guild_raid_alerts_setup";
+    e.GUILD_RAID_ALERT_SENT = "guild_raid_alert_sent";
+    e.GUILD_SAFETY_MENTION_RAID_SETUP_CTA_CLICKED =
+        "guild_safety_mention_raid_setup_cta_clicked";
+    e.GUILD_RAID_LOCKDOWN_FEEDBACK = "guild_raid_lockdown_feedback";
+    e.GUILD_RAID_INTERVENTION_STATE_CHANGE =
+        "guild_raid_intervention_state_change";
+    e.NEW_MEMBER_MENTION_CTA_CLICKED = "new_member_mention_cta_clicked";
+    e.MOBILE_OVERLAY_CLOSED = "mobile_overlay_closed";
+    e.MOBILE_OVERLAY_OPENED = "mobile_overlay_opened";
+    e.MOBILE_OVERLAY_TOGGLED = "mobile_overlay_toggled";
+    e.POGGERMODE_SETTINGS_UPDATED = "poggermode_settings_updated";
+    e.IAR_BLOCK_USER_BUTTON_CLICKED = "iar_block_user_button_clicked";
+    e.IAR_LEAVE_GUILD_BUTTON_CLICKED = "iar_leave_guild_button_clicked";
+    e.IAR_DELETE_MESSAGE_BUTTON_CLICKED = "iar_delete_message_button_clicked";
+    e.IAR_CLICK_DONT_LIKE = "iar_click_dont_like";
+    e.IAR_NAVIGATE = "iar_navigate";
+    e.IAR_MODAL_OPEN = "iar_modal_open";
+    e.IAR_MODAL_CLOSE = "iar_modal_close";
+    e.IAR_FEEDBACK_MODAL_VIEWED = "iar_feedback_modal_viewed";
+    e.IAR_FEEDBACK_SUBMITTED = "iar_feedback_submitted";
+    e.EMOJI_UPLOAD_FILE_SIZE_LIMIT_EXCEEDED =
+        "emoji_upload_file_size_limit_exceeded";
+    e.EMOJI_UPLOAD_STARTED = "emoji_upload_started";
+    e.EMOJI_UPLOAD_COMPLETED = "emoji_upload_completed";
+    e.EMOJI_FILE_RESIZED = "emoji_file_resized";
+    e.STICKER_FILE_RESIZED = "sticker_file_resized";
+    e.STICKER_UPLOAD_STARTED = "sticker_upload_started";
+    e.STICKER_UPLOAD_COMPLETED = "sticker_upload_completed";
+    e.STICKER_UPLOAD_FILE_SIZE_LIMIT_EXCEEDED =
+        "sticker_upload_file_size_limit_exceeded";
+    e.APP_DIRECTORY_PAGE_VIEWED = "app_directory_page_viewed";
+    e.APP_DIRECTORY_SEARCH_STARTED = "app_directory_search_started";
+    e.APP_DIRECTORY_SEARCHED = "app_directory_searched";
+    e.APP_DIRECTORY_CTA_CLICKED = "app_directory_cta_clicked";
+    e.APP_DIRECTORY_CATEGORY_CLICKED = "app_directory_category_clicked";
+    e.APP_DIRECTORY_COLLECTION_ITEM_CLICKED =
+        "app_directory_collection_item_clicked";
+    e.APP_DIRECTORY_COLLECTION_SCROLLED = "app_directory_collection_scrolled";
+    e.APP_DIRECTORY_SUPPORT_SERVER_JOINED =
+        "app_directory_support_server_joined";
+    e.APP_DIRECTORY_APPLICATION_EXTERNAL_LINK_CLICKED =
+        "app_directory_application_external_link_clicked";
+    e.APP_SHARE_BUTTON_CLICKED = "app_share_button_clicked";
+    e.APP_DIRECTORY_RECOMMENDATION_CLICKED =
+        "app_directory_recommendation_clicked";
+    e.APP_DIRECTORY_SEARCH_RESULT_CLICKED =
+        "app_directory_search_result_clicked";
+    e.APP_DIRECTORY_PROFILE_TAB_CLICKED = "app_directory_profile_tab_clicked";
+    e.APP_DIRECTORY_CAROUSEL_IMAGE_LOADED =
+        "app_directory_carousel_image_loaded";
+    e.APP_DIRECTORY_PROFILE_EMBED_APP_INFO_CLICKED =
+        "app_directory_profile_embed_app_info_clicked";
+    e.APP_DIRECTORY_PROFILE_EMBED_VIEWED = "app_directory_profile_embed_viewed";
+    e.APP_DIRECTORY_PROFILE_INVALID_EMBED_VIEWED =
+        "app_directory_profile_invalid_embed_viewed";
+    e.APP_DIRECTORY_PROFILE_EMBED_URL_CLICKED =
+        "app_directory_profile_embed_url_clicked";
+    e.APP_DIRECTORY_PROFILE_EMBED_SENT = "app_directory_profile_embed_sent";
+    e.APP_DIRECTORY_PAGE_SCROLLED = "app_directory_page_scrolled";
+    e.POPULAR_CHANNEL_CLICKED = "popular_channel_clicked";
+    e.URL_CLICKED = "url_clicked";
+    e.LINK_CLICKED = "link_clicked";
+    e.ROLE_STYLE_SETTING_UPDATED = "role_style_setting_updated";
+    e.PREMIUM_MARKETING_SURFACE_SIDE_BAR_SELECT =
+        "premium_marketing_surface_side_bar_select";
+    e.PREMIUM_MARKETING_SURFACE_VIEWED = "premium_marketing_surface_viewed";
+    e.PREMIUM_MARKETING_SURFACE_EXITED = "premium_marketing_surface_exited";
+    e.PREMIUM_MARKETING_SURFACE_REACHED_BOTTOM =
+        "premium_marketing_surface_reached_bottom";
+    e.PREMIUM_MARKETING_GUILD_SIDEBAR_ENTRYPOINT_VIEWED =
+        "premium_marketing_guild_sidebar_entrypoint_viewed";
+    e.PREMIUM_AGGREGATE_UPSELL_MODAL_INTERACTION =
+        "premium_aggregate_upsell_modal_interaction";
+    e.VOICE_CALL_TRANSFER = "voice_call_transfer";
+    e.DM_SAFETY_COACHMARK_ACTION = "dm_safety_coachmark_action";
+    e.MESSAGE_REQUEST_ACTION = "message_request_action";
+    e.VOICE_CHANNEL_EFFECT_BAR_VIEWED = "voice_channel_effect_bar_viewed";
+    e.VOICE_CHANNEL_EFFECT_SENT = "voice_channel_effect_sent";
+    e.VOICE_CHANNEL_EFFECT_VIEWED = "voice_channel_effect_viewed";
+    e.VOICE_CHANNEL_EFFECT_FANCY_ANIMATION_TOGGLED =
+        "voice_channel_effect_fancy_animation_toggled";
+    e.VOICE_CHANNEL_EFFECT_EMOJI_PICKER_EXPANDED =
+        "voice_channel_effect_emoji_picker_expanded";
+    e.PREMIUM_MARKETING_PLAN_COMPARISON_PAGE_VIEWED =
+        "premium_marketing_plan_comparison_page_viewed";
+    e.PREMIUM_MARKETING_SCROLLED_TO_LAST = "premium_marketing_scrolled_to_last";
+    e.LOCAL_VOICE_SETTINGS_LOADED = "local_voice_settings_loaded";
+    e.HIGHLIGHTS_TEST_LOADED = "highlights_test_loaded";
+    e.CHANNEL_LIST_UPDATED = "channel_list_updated";
+    e.CHANNEL_BANNER_VIEWED = "channel_banner_viewed";
+    e.CHANNEL_BANNER_CTA_CLICKED = "channel_banner_cta_clicked";
+    e.USER_CONTINUE_IN_BROWSER_CLICKED = "user_continue_in_browser_clicked";
+    e.PASSPORT_CHALLENGE_VIEWED = "passport_challenge_viewed";
+    e.PASSPORT_CHALLENGE_STARTED = "passport_challenge_started";
+    e.PASSPORT_CHALLENGE_FINISHED = "passport_challenge_finished";
+    e.PASSPORT_ENTRY_VIEWED = "passport_entry_viewed";
+    e.PASSPORT_ROLE_POPOUT_VIEWED = "passport_role_popout_viewed";
+    e.CHANNEL_HIGHLIGHTS_VIEWED = "channel_highlights_viewed";
+    e.CHANNEL_HIGHLIGHTS_ACKED = "channel_highlights_acked";
+    e.GUILD_CHANNEL_HIGHLIGHTS_LOADED = "guild_channel_highlights_loaded";
+    e.GUILD_ONBOARDING_LOADED = "guild_onboarding_loaded";
+    e.GUILD_ONBOARDING_STEP_VIEWED = "guild_onboarding_step_viewed";
+    e.GUILD_ONBOARDING_STEP_COMPLETED = "guild_onboarding_step_completed";
+    e.GUILD_SETTINGS_ONBOARDING_WIZARD_PROGRESS_CTA_CLICKED =
+        "guild_settings_onboarding_wizard_progress_cta_clicked";
+    e.GUILD_SETTINGS_ONBOARDING_EDIT_PAGE_CLICKED =
+        "guild_settings_onboarding_edit_page_clicked";
+    e.GUILD_SETTINGS_GUIDE_UPDATED = "guild_settings_guide_updated";
+    e.SERVER_GUIDE_VIEWED = "server_guide_viewed";
+    e.SERVER_GUIDE_CHANNEL_SELECTED = "server_guide_channel_selected";
+    e.SERVER_GUIDE_ACTION_COMPLETED = "server_guide_action_completed";
+    e.MEDIA_PICKER_INFINITE_SCROLL_PAGED = "media_picker_infinite_scroll_paged";
+    e.MESSAGE_MENU_GOOGLE_SEARCHED = "message_menu_google_searched";
+    e.DM_PROFILE_TOGGLED = "dm_profile_toggled";
+    e.DM_PROFILE_VIEWED = "dm_profile_viewed";
+    e.PREMIUM_WOW_MOMENT_VIEWED = "premium_wow_moment_viewed";
+    e.PREMIUM_FEATURE_HELPER_ACTIONS = "premium_feature_helper_actions";
+    e.PREMIUM_FEATURE_TUTORIAL_STEPS = "premium_feature_tutorial_steps";
+    e.PREMIUM_FEATURE_TUTORIAL_FLOW_DISABLED =
+        "premium_feature_tutorial_flow_disabled";
+    e.PREMIUM_TUTORIAL_TOOLTIP_VIEWED = "premium_tutorial_tooltip_viewed";
+    e.PREMIUM_APP_CANCELLATION_SURVEY_SUBMITTED =
+        "premium_app_cancellation_survey_submitted";
+    e.GUILD_ROLE_SUBSCRIPTION_STORE_PAGE_TOGGLED =
+        "guild_role_subscription_store_page_toggled";
+    e.GUILD_ROLE_SUBSCRIPTION_TEAM_SETUP_CLICKED =
+        "guild_role_subscription_team_setup_clicked";
+    e.GUILD_ROLE_SUBSCRIPTION_SETUP_MODAL_CLOSED =
+        "guild_role_subscription_setup_modal_closed";
+    e.MESSAGE_ACTION_SHEET_OPENED = "message_action_sheet_opened";
+    e.SNOWSGIVING_PAGE_CTA_CLICKED = "snowsgiving_page_cta_clicked";
+    e.REACTION_ACTION_SHEET_OPENED = "reaction_action_sheet_opened";
+    e.MESSAGE_EMBEDS_ACTION_COMPLETED = "message_embeds_action_completed";
+    e.SEND_MESSAGE_FAILURE = "send_message_failure";
+    e.SEND_MESSAGE_QUEUED = "send_message_queued";
+    e.VC_TILE_ACTIVITIES_ENTRY_POINT_VIEWED =
+        "vc_tile_activities_entry_point_viewed";
+    e.VC_TILE_ACTIVITIES_ENTRY_POINT_CLOSED =
+        "vc_tile_activities_entry_point_closed";
+    e.KV_FIELD_TRIAL_EXECUTED = "kv_field_trial_executed";
+    e.REMOTE_COMMAND_SENT = "remote_command_sent";
+    e.CLIENT_THEME_UPDATED = "client_theme_updated";
+    e.CLIENT_THEME_PREVIEW_VIEWED = "client_theme_preview_viewed";
+    e.CLIENT_THEME_PREVIEW_CLOSED = "client_theme_preview_closed";
+    e.GUILD_DROPDOWN_MENU_VIEWED = "guild_dropdown_menu_viewed";
+    e.VOICE_MESSAGE_PLAYBACK_ENDED = "voice_message_playback_ended";
+    e.VOICE_MESSAGE_PLAYBACK_FAILED = "voice_message_playback_failed";
+    e.VOICE_MESSAGE_PLAYBACK_STARTED = "voice_message_playback_started";
+    e.VOICE_MESSAGE_RECORDED = "voice_message_recorded";
+    e.FAMILY_CENTER_VIEWED = "family_center_viewed";
+    e.FAMILY_CENTER_ACTION = "family_center_action";
+    e.BOOSTING_UPSELL_VIEWED = "boosting_upsell_viewed";
+    e.BOOSTING_UPSELL_CLICKED = "boosting_upsell_clicked";
+    e.TNS_USER_REPORT_SUBMITTED = "tns_user_report_submitted";
+    e.MJ_CHAT_BAR_CTA_CLICKED = "mj_chat_bar_cta_clicked";
+    e.MJ_CHAT_BAR_VIEWED = "mj_chat_bar_viewed";
+    e.SHARE_NITRO_FLOW_STEPS = "share_nitro_flow_steps";
+    e.CACHE_STORE_CACHE_SKIPPED = "cache_store_cache_skipped";
+    e.CLYDE_NUX_NOTICE_MANAGE_SETTINGS_CTA_CLICKED =
+        "clyde_nux_notice_manage_settings_cta_clicked";
+    e.CLYDE_AI_MESSAGE_RATED = "clyde_ai_message_rated";
+    e.CLYDE_AI_THOUGHTS_VIEWED = "clyde_ai_thoughts_viewed";
+    e.CLYDE_AI_PRESET_PERSONALITY_SELECTED =
+        "clyde_ai_preset_personality_selected";
+    e.APPLE_PARTNER_IAP_REQUEST_SENT = "apple_partner_iap_request_sent";
+    e.POMELO_ERRORS = "pomelo_errors";
+    e.POMELO_EDIT_STEP_VIEWED = "pomelo_edit_step_viewed";
+    e.MESSAGE_COMPOSER_TRANSITIONED = "message_composer_transitioned";
+    e.MESSAGE_COMPOSER_SEARCH_RESULT_CLICKED =
+        "message_composer_search_result_clicked";
+    e.MESSAGE_COMPOSER_MAX_USERS_ADDED = "message_composer_max_users_added";
+    e.REMIX_SENT = "remix_sent";
+    e.REMIX_DOWNLOADED = "remix_downloaded";
+    e.REMIX_SURFACE_EXIT_MODAL = "remix_surface_exit_modal";
+    e.REMIXING_ACTION_REDONE = "remixing_action_redone";
+    e.REMIXING_ACTION_UNDONE = "remixing_action_undone";
+    e.REMIXING_SURFACE_EXIT_CANCELED = "remixing_surface_exit_canceled";
+    e.REMIXING_SURFACE_EXITED = "remixing_surface_exited";
+    e.REMIXING_SURFACE_OPENED = "remixing_surface_opened";
+    e.ROUTE_UNMOUNT = "route_unmount";
+    e.REMIXING_COMPONENT_ADDED = "remixing_component_added";
+    e.REMIXING_COMPONENT_TOOL_CANCELED = "remixing_component_tool_canceled";
+    e.REMIXING_COMPONENT_TOOL_OPENED = "remixing_component_tool_opened";
+    e.REMIXING_BADGE_PRESSED = "remixing_badge_pressed";
+    e.REMIXING_UPSELL_ACCEPTED = "remixing_upsell_accepted";
+    e.REMIXING_UPSELL_DISMISSED = "remixing_upsell_dismissed";
+    e.SAFETY_USER_SENTIMENT_FEEDBACK_SUBMITTED =
+        "safety_user_sentiment_feedback_submitted";
+    e.CONSOLE_LAN_DETECTION_OPT_IN = "console_lan_detection_opt_in";
+    e.CONSOLE_LAN_DETECTION_CONSOLE_DETECTED =
+        "console_lan_detection_console_detected";
+    e.GDM_STARTER_APPS_VIEWED = "gdm_starter_apps_viewed";
+    e.DCF_CAP_EXCEEDED = "dcf_cap_exceeded";
+    e.ACK_COMMUNITY_MESSAGES = "ack_community_messages";
+})(ar || (ar = {}));

@@ -1,15 +1,22 @@
 import { parse } from "acorn";
-import { simple } from "acorn-walk";
+import { full } from "acorn-walk";
 import { generate } from "astring";
 import {
+    isAssignmentExpression,
+    isCallExpression,
+    isObjectExpression,
+} from "./dissector/utils";
+import {
+    ExperimentDefinition,
     getAsset,
     getExperimentDefinition,
     getStrings,
     processChunk,
 } from "./dissector/web";
-import { ObjectExpression, Program } from "./types/es2022";
+import { Program } from "./types/es2022";
+import { AnyNode } from "./types/utils";
 
-const script = await Bun.file(`./files/chunks/2023.js.txt`).text();
+const script = await Bun.file(`./files/chunks/2021.js.txt`).text();
 
 const astStartTime = performance.now();
 
@@ -27,8 +34,8 @@ const processEndTime = performance.now();
 console.log(`Processed chunk in ${processEndTime - astEndTime}ms`);
 
 const assets: Record<string, string> = {};
-const strings = {};
-const experiments: any[] = [];
+const strings: Record<string, string> = {};
+const experiments: ExperimentDefinition[] = [];
 
 for (let [id, module] of Object.entries(modules)) {
     if (module === null) continue;
@@ -45,12 +52,19 @@ for (let [id, module] of Object.entries(modules)) {
         continue;
     }
 
-    simple(module as unknown as any, {
-        ObjectExpression(node) {
-            const obj = node as unknown as ObjectExpression;
-            const definition = getExperimentDefinition(obj);
-            if (definition) experiments.push(definition);
-        },
+    full(module as unknown as any, acornNode => {
+        const node = acornNode as unknown as AnyNode;
+        if (
+            isAssignmentExpression(node) ||
+            isCallExpression(node) ||
+            isObjectExpression(node)
+        ) {
+            const definition = getExperimentDefinition(node);
+            if (typeof definition !== "undefined")
+                experiments.push(
+                    ...(Array.isArray(definition) ? definition : [definition])
+                );
+        }
     });
 }
 

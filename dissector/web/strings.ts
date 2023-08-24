@@ -106,6 +106,10 @@ import {
  *     # one
  *     [0]: Literal
  *       value: "use strict"
+ *     # or
+ *     [0]: ExpressionStatement
+ *       expression: Literal
+ *         value: "use strict"
  *     [1]: ExpressionStatement
  *       expression: AssignmentExpression
  *         left: MemberExpression
@@ -238,7 +242,14 @@ export function getStrings(
         isIdentifier(module.params[0]) &&
         isBlockStatement(module.body) &&
         module.body.body.length >= 1 &&
-        (stmt = module.body.body[isLiteral(module.body.body[0], "use strict") ? 1 : 0]) &&
+        (
+            stmt = module.body.body[
+                (
+                    isLiteral(module.body.body[0], "use strict") ||
+                    (isExpressionStatement(module.body.body[0]) &&
+                    isLiteral(module.body.body[0].expression, "use strict"))
+                ) ? 1 : 0]
+        ) &&
         isExpressionStatement(stmt) &&
         isAssignmentExpression(stmt.expression) &&
         isMemberExpression(stmt.expression.left) &&

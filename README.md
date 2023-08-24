@@ -4,8 +4,7 @@ This project aims to be a correct and efficient dissector for various types of
 Discord builds.
 
 Currently there are dissectors present for the web builds only but soon I'll be
-adding dissectors for Developer Portal builds and Android/iOS builds *(these are
-going to be generic hermes bytecode decompilers)*.
+adding dissectors for Developer Portal builds.
 
 You can view the different files in the [`./dissector`](./dissector) folder to
 see how things work, I've done extensive research on the web client and have
@@ -24,4 +23,4 @@ web dissector.
 A lot of this work has been adopted from my contribution to [havoc](https://github.com/slice/havoc)
 and [snitch](https://github.com/slice/snitch) both awesome projects.\
 Although unlike the above projects this project doesn't provide any way to poll
-builds and provide updates, nor it is written in Rust or Haskell :p
+builds and provide updates, nor is it written in Rust or Haskell :p
