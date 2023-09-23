@@ -1,52 +1,61 @@
 import { parse } from "acorn";
 import { full } from "acorn-walk";
-import { generate } from "astring";
+
+import { assets, metadata, webpack } from "./dissector/discord_web";
 import {
     isAssignmentExpression,
     isCallExpression,
     isObjectExpression,
 } from "./dissector/utils";
-import {
-    ExperimentDefinition,
-    getAsset,
-    getExperimentDefinition,
-    getStrings,
-    processChunk,
-} from "./dissector/web";
-import { Program } from "./types/es2022";
 import { AnyNode } from "./types/utils";
 
-const script = await Bun.file(`./files/chunks/2021.js.txt`).text();
-
-const astStartTime = performance.now();
+// prettier-ignore
+const script = await Bun.file(`./files/discord_web/mainChunks/2023.js.txt`).text();
+// const script = await fetch("https://canary.discord.com/assets/619454966c65dd6c8d2b.js").then(r => r.text());
 
 const ast = parse(script, {
     ecmaVersion: "latest",
     sourceType: "module",
 });
 
-const astEndTime = performance.now();
-console.log(`Parsed chunk in ${astEndTime - astStartTime}ms`);
+const { requiredChunks, modules, executeModules } = webpack.processChunk(ast);
 
-const { requiredChunks, modules, executeModules } = processChunk(ast);
+/*
+const classNameMappings: Record<string, string> = {};
 
-const processEndTime = performance.now();
-console.log(`Processed chunk in ${processEndTime - astEndTime}ms`);
+for (const module of Object.values(modules)) {
+    const mappings = getClassNameMappings(module);
 
-const assets: Record<string, string> = {};
+    if (typeof mappings !== "undefined") {
+        Object.assign(classNameMappings, mappings);
+    }
+}
+
+console.log(classNameMappings);
+*/
+
+// assets
+const cdnAssets: Record<string, string> = {};
+const minifiedJSXSVGAssets: assets.ReactElement[] = [];
+const lottieAssets: Record<string, any> = {};
+
+// metadata
+const experiments: metadata.ExperimentDefinition[] = [];
+const actionTypes: Record<string, metadata.ActionType["partialProps"]> = {};
 const strings: Record<string, string> = {};
-const experiments: ExperimentDefinition[] = [];
 
-for (let [id, module] of Object.entries(modules)) {
-    if (module === null) continue;
+let modulesCount = 0;
 
-    const asset = getAsset(module);
+for (const [id, module] of Object.entries(modules)) {
+    modulesCount++;
+
+    const asset = assets.getCDNAsset(module);
     if (typeof asset !== "undefined") {
-        assets[id] = asset;
+        cdnAssets[id] = asset;
         continue;
     }
 
-    let moduleStrings = getStrings(module);
+    let moduleStrings = metadata.getStrings(module);
     if (typeof moduleStrings !== "undefined") {
         Object.assign(strings, moduleStrings);
         continue;
@@ -54,44 +63,62 @@ for (let [id, module] of Object.entries(modules)) {
 
     full(module as unknown as any, acornNode => {
         const node = acornNode as unknown as AnyNode;
+
+        if (isCallExpression(node)) {
+            const actionType = metadata.getDispatcherActionType(node);
+            if (typeof actionType !== "undefined") {
+                actionTypes[actionType.type] ??= actionType.partialProps;
+            }
+
+            const svg = assets.getMinfiedJSXSvg(node);
+            if (typeof svg !== "undefined") {
+                minifiedJSXSVGAssets.push(svg);
+            }
+
+            const lottie = assets.getLottieAsset(node);
+            if (typeof lottie !== "undefined") {
+                lottieAssets[lottie.nm] = lottie;
+            }
+
+            const buildNumber = metadata.getBuildNumber(node);
+            if (typeof buildNumber !== "undefined") {
+                console.log(buildNumber);
+            }
+        }
+
         if (
             isAssignmentExpression(node) ||
             isCallExpression(node) ||
             isObjectExpression(node)
         ) {
-            const definition = getExperimentDefinition(node);
-            if (typeof definition !== "undefined")
+            const experimentDefinition = metadata.getExperimentDefinition(node);
+            if (typeof experimentDefinition !== "undefined") {
                 experiments.push(
-                    ...(Array.isArray(definition) ? definition : [definition])
+                    ...(Array.isArray(experimentDefinition)
+                        ? experimentDefinition
+                        : [experimentDefinition])
                 );
+            }
         }
     });
 }
 
-const resolveEndTime = performance.now();
-console.log(`Resolved chunk in ${resolveEndTime - processEndTime}ms`);
+const out = {
+    assets: {
+        cdn: cdnAssets,
+        minified_jsx_svg: minifiedJSXSVGAssets,
+        lottie: lottieAssets,
+    },
+    metadata: {
+        experiments,
+        action_types: actionTypes,
+        strings,
+    },
+    webpack: {
+        modules_count: modulesCount,
+        required_chunks: requiredChunks,
+        execute_modules: executeModules,
+    },
+};
 
-await Bun.write(
-    "out.json",
-    JSON.stringify(
-        {
-            requiredChunks,
-            executeModules,
-            assets,
-            experiments,
-            strings,
-            modules: Object.fromEntries(
-                Object.entries(modules).map(([k, v]) => [
-                    k,
-                    generate(
-                        v.body.type === "BlockStatement"
-                            ? <Program>{ type: "Program", body: v.body.body }
-                            : v.body
-                    ),
-                ])
-            ),
-        },
-        undefined,
-        4
-    )
-);
+await Bun.write("out.json", JSON.stringify(out, undefined, 2));

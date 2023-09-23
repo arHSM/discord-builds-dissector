@@ -8,16 +8,18 @@ Things I need to do.
 
 ### Web
 
+- [x] build number
 - [x] chunks
+- [ ] module dependencies
 - [x] assets
 - [x] strings
 - [ ] locale strings
-- [ ] dependency
-- [ ] experiment definitions
-- [ ] dismissables
-- [ ] action types (our beloved dispatcher)
-- [ ] science/analytics stuff (?)
-- [ ] minfied JSX SVG elements
+- [x] experiment definitions
+- [x] action types (our beloved dispatcher)
+- [x] minfied JSX SVG elements
+- [x] lottie assets
+- [x] css class name mappings
+- [ ] css assets
 - [ ] enums
   - [ ] Endpoints
   - [ ] Routes
@@ -28,6 +30,11 @@ Things I need to do.
 - [ ] chunks
 - [ ] experiment definitions
 - [ ] and enums (TODO: list all useful enums here)
+
+### Mobile
+
+- [ ] Asset extractor from apk/ipa
+- [ ] experiment definition parser from hermes bytecode.
 
 ## Useful notes
 
@@ -74,7 +81,7 @@ To find all chunks form the chunk loader (replace all newlines before running th
 
 You could use ast parsing and stuff for getting chunks from chunk loader, but meh.\
 Ehm apprently css chunks can have the same file again and again at least
-[`./files/chunkLoaders/2020.js.txt`](./files/chunkLoaders/2020.js.txt) does.
+[a discord_web chunk loader from 2020](./files/discord_web/chunkLoaders/2020.js.txt) does.
 
 ### Developer Portal
 

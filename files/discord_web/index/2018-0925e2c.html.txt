@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport">
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Discord" />
+  <meta property="og:title" content="Discord - Free voice and text chat for gamers" />
+  <meta property="og:description" content="Step up your game with a modern voice & text chat app. Crystal clear voice, multiple server and channel support, mobile apps, and more. Get your free server now!"
+  /><meta property="og:image" content="//canary.discord.com/assets/ee7c382d9257652a88c8f7b7f22a994d.png" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@discordapp">
+  <meta name="twitter:creator" content="@discordapp">
+
+  <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/lcbhdgefieegnkbopmgklhlpjjdgmbog">
+<link rel="stylesheet" href="/assets/0fa736c11972cde9f218bd1b50472323.css" integrity="sha256-wM8yF1whyhSrpHylS7yIGcFR/9ldtA9EMOwiqnbVXrY= sha512-BBBh6Hqk4zgZOJ3En9CfLLT7BThlhWTh3oR/powxkpKMW8+TAHIAVzEqYpTls7FgsnEpug9b8aEWehS7xKCoXA=="><link rel="icon" href="/assets/07dca80a102d4149e9736d4b162cff6f.ico" />  <title>Discord</title>
+</head>
+
+<body>
+  <div id="app-mount"></div>
+  <script>window.__OVERLAY__ = /overlay/.test(location.pathname)</script><script>window.GLOBAL_ENV = {
+      API_ENDPOINT: '//canary.discord.com/api',
+      WEBAPP_ENDPOINT: '//canary.discord.com',
+      CDN_HOST: 'cdn.discordapp.com',
+      ASSET_ENDPOINT: '//canary.discord.com',
+      WIDGET_ENDPOINT: '//canary.discord.com/widget',
+      INVITE_HOST: 'discord.gg',
+      MARKETING_ENDPOINT: '//canary.discord.com',
+      RELEASE_CHANNEL: 'canary',
+    };</script><script>!function(){if(null!=window.WebSocket){var n=function(n){try{var e=localStorage.getItem(n);return null==e?null:JSON.parse(e)}catch(n){return null}},e=n("token"),o=n("gatewayURL");if(e&&o){var r=null!=window.DiscordNative||null!=window.require?"etf":"json",t=o+"/?encoding="+r+"&v=6";void 0!==window.Uint8Array&&(t+="&compress=zlib-stream"),console.log("[FAST CONNECT] "+t+", encoding: "+r+", version: 6");var a=new WebSocket(t);a.binaryType="arraybuffer";var i=Date.now(),s={open:!1,gateway:t,messages:[]};a.onopen=function(){console.log("[FAST CONNECT] connected in "+(Date.now()-i)+"ms"),s.open=!0},a.onclose=a.onerror=function(){window._ws=null},a.onmessage=function(n){s.messages.push(n)},window._ws={ws:a,state:s}}}}();</script><script src="/assets/a81ae9ccd94387e0fb77.js" integrity="sha256-P8W5XbgJXwKkA/D2VX/VJndMudiOWyuVB70Op2uynv8= sha512-6//eY6022OgsYHHaKF7UCcVQwggLPv0MjYuGr/LwkscoW/rFKcQOgLkgmwgoYKcpQkyj4y83a7DADO8ur6Nm7A=="></script><script src="/assets/ba461a21f94f1ece574d.js" integrity="sha256-KY80bC0HPv2cQROOMjxt0jhN9+uPvwECi8thztZIRy8= sha512-69jR8G50OWF4WRG/vS7tH3niudLJ9+ojejcf7pffT+MrVyotoq4Sc09diZqJ7pq5v+H9ZJ8HVzrqW/qOpvxJoA=="></script><script nonce="NTksMCwxMTAsMjQsNDcsMjE0LDExOCwyNDU=">(function(){var js = "window['__CF$cv$params']={r:'7dfde2bfd3ed59d4',m:'LeUOP77bATxx4RSOpIGmo6uHTAjDYKEnAQfrOcf1vWY-1688206505-0-AQNJXSe98+JzOnQI2dmxZPmwULz96+lmls5Ev3b7GsmG'};_cpo=document.createElement('script');_cpo.nonce='NTksMCwxMTAsMjQsNDcsMjE0LDExOCwyNDU=',_cpo.src='/cdn-cgi/challenge-platform/scripts/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.nonce = 'NTksMCwxMTAsMjQsNDcsMjE0LDExOCwyNDU=';_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script></body>
+
+</html>

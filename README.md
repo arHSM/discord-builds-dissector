@@ -23,4 +23,4 @@ web dissector.
 A lot of this work has been adopted from my contribution to [havoc](https://github.com/slice/havoc)
 and [snitch](https://github.com/slice/snitch) both awesome projects.\
 Although unlike the above projects this project doesn't provide any way to poll
-builds and provide updates, nor is it written in Rust or Haskell :p
+builds and provide updates (yet), nor is it written in Rust or Haskell :p

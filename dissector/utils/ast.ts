@@ -6,7 +6,7 @@ type AstToJSLiteral = Literal["value"];
 type AstToJSObject = Record<string, any>;
 export type AstToJS = AstToJSLiteral | AstToJSObject | AstToJS[];
 
-export function astToJS(node: AnyNode): AstToJS {
+export function astToJS(node: AnyNode, ignoreObjectProps?: string[]): AstToJS {
     switch (node.type) {
         case "Literal":
             return node.value;
@@ -17,6 +17,13 @@ export function astToJS(node: AnyNode): AstToJS {
                 if (!isProperty(prop)) continue;
 
                 if (isIdentifier(prop.key)) {
+                    if (
+                        typeof ignoreObjectProps !== "undefined" &&
+                        ignoreObjectProps.includes(prop.key.name)
+                    ) {
+                        continue;
+                    }
+
                     obj[prop.key.name] = astToJS(prop.value);
                 } else if (isLiteral(prop.key)) {
                     obj[prop.key.value as unknown as string] = astToJS(
@@ -66,6 +73,7 @@ export const isArrowFunctionExpression = is("ArrowFunctionExpression");
 export const isBlockStatement = is("BlockStatement");
 export const isBinaryExpression = is("BinaryExpression");
 export const isCallExpression = is("CallExpression");
+export const isConditionalExpression = is("ConditionalExpression");
 export const isExpressionStatement = is("ExpressionStatement");
 export const isFunctionExpression = is("FunctionExpression");
 export const isLogicalExpression = is("LogicalExpression");
